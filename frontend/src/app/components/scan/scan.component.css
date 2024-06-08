@@ -1,0 +1,6 @@
+/* qr-scanner.component.css */
+
+video, canvas {
+  width: 100%;
+  height: auto;
+}
