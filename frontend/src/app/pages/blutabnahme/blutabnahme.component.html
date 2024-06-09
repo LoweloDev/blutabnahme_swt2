@@ -1,0 +1,11 @@
+<mat-horizontal-stepper [selectedIndex]="currentStep">
+  <mat-step *ngFor="let step of steps; let i = index" [completed]="currentStep > i">
+    <ng-template matStepLabel>Schritt {{ i + 1 }}</ng-template>
+    <p>Hier sind die Daten für Schritt {{ i + 1 }}: {{ data | json }}</p>
+    <div>
+      <button mat-button matStepperNext (click)="openDialog(i)" [disabled]="i !== currentStep">
+        Öffne Schritt {{ i + 1 }}
+      </button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

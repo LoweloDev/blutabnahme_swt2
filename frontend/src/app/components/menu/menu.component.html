@@ -1,0 +1,22 @@
+<mat-drawer-container class="global-sidenav">
+  <mat-drawer class="global-sidenav" #drawer mode="side">
+    <mat-toolbar>
+      <span>Main Menu</span>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/blutabnahme" (click)="drawer.toggle()">Blutabnahme starten</a>
+      <a mat-list-item routerLink="/laborauftraege" (click)="drawer.toggle()">Laboraufträge anzeigen</a>
+      <a mat-list-item routerLink="/settings" (click)="drawer.toggle()">Blutabnahmen anzeigen</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <div class="global-sidenav-content">
+    <button class="burger-button" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- figure out for what fucking reason router outlet has to be here to make the routes work instead of where it used to be -->
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

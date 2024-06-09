@@ -1,3 +1,9 @@
 import { Routes } from '@angular/router';
+import {AppComponent} from "./app.component";
+import {BlutabnahmeComponent} from "./pages/blutabnahme/blutabnahme.component";
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'dashboard', component: AppComponent },
+  { path: 'blutabnahme', component: BlutabnahmeComponent },
+  { path: '**', redirectTo: '/dashboard' },
+];
