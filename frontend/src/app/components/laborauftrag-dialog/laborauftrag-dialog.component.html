@@ -1,0 +1,6 @@
+<ng-container *ngIf="style === GenericDialogType.TABLE">
+  <app-laborauftrag-table [filters]="filters" (laborauftragSelected)="setLaborauftrag($event)"></app-laborauftrag-table>
+</ng-container>
+<ng-container *ngIf="style === GenericDialogType.EXPANDABLE">
+  <app-laborauftrag-selected></app-laborauftrag-selected>
+</ng-container>

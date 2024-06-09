@@ -1,8 +1,9 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {BarcodeFormat} from "@zxing/browser";
 
 import {AsyncPipe, JsonPipe, NgIf} from "@angular/common";
 import {ZXingScannerComponent, ZXingScannerModule} from "@zxing/ngx-scanner";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-scan',
@@ -20,15 +21,31 @@ export class ScanComponent implements OnInit, AfterViewInit {
   @ViewChild(ZXingScannerComponent, { static: false })
   public scanner?: ZXingScannerComponent;
   allowedFormats = [ BarcodeFormat.QR_CODE, BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, BarcodeFormat.DATA_MATRIX ];
+  stepData: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    window.alert("TEST");
+  constructor(
+    public dialogRef: MatDialogRef<ScanComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.stepData = data;
   }
 
+  save(): void {
+    this.dialogRef.close(this.stepData);
+  }
+
+  cancel(): void {
+    this.dialogRef.close();
+  }
+  ngOnInit(): void {}
+
   ngAfterViewInit(): void {
-    this.scanAllowedCodes();
+    try {
+      this.scanAllowedCodes();
+    } catch (e) {
+      console.error("stepData: 'Help me I got stuck!'", e);
+      this.cancel();
+    }
   }
 
   public scanAllowedCodes() {
@@ -40,7 +57,9 @@ export class ScanComponent implements OnInit, AfterViewInit {
     this.scanner.autofocusEnabled = true;
 
     this.scanner.scanSuccess.subscribe((result: string) => {
-      window.alert('Barcode result: ' + result);
+      console.log(this.stepData);
+      this.stepData.authorization[this.stepData.stepId] = result;
+      this.save();
     });
   }
 }
