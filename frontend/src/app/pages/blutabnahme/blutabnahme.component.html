@@ -1,10 +1,51 @@
 <mat-horizontal-stepper [selectedIndex]="currentStep">
-  <mat-step *ngFor="let step of steps; let i = index" [completed]="currentStep > i">
-    <ng-template matStepLabel>Schritt {{ i + 1 }}</ng-template>
-    <p>Hier sind die Daten für Schritt {{ i + 1 }}: {{ data | json }}</p>
+  <mat-step>
+    <ng-template matStepLabel>Mitarbeiter scannen</ng-template>
     <div>
-      <button mat-button matStepperNext (click)="openDialog(i)" [disabled]="i !== currentStep">
-        Öffne Schritt {{ i + 1 }}
+      <button mat-flat-button (click)="openDialog(ScanComponent, { stepId: 'patient' }, scanCallback)" [disabled]="0 !== currentStep">
+        Bitte Mitarbeiter-Karte scannen
+      </button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Patient scannen</ng-template>
+    <div>
+      <button mat-flat-button (click)="openDialog(ScanComponent, { stepId: 'mitarbeiter' }, scanCallback)" [disabled]="1 !== currentStep">
+        Bitte Patienten-Armband scannen
+      </button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Laborauftrag bearbeiten</ng-template>
+    <div>
+      <button mat-flat-button (click)="openDialog(LaborauftragDialogComponent, { stepId: 'laborauftrag', style: GenericDialogType.TABLE }, laboratoryCallback)" [disabled]="2 !== currentStep">
+        Laboraufträge auswählen
+      </button>
+      <ng-container>
+        <!-- shows in expansion panel each laborauftrag und dort wird dann über inputs bearbeitet oder halt das blutabnahmeröhrchen übern button eingescanned -->
+        <app-laborauftrag-selected [laborauftrags]="laborauftrags"></app-laborauftrag-selected>
+      </ng-container>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Summary</ng-template>
+    <div>
+      <h3>Summary</h3>
+      <p>Employee: {{ authorization.mitarbeiter }}</p>
+      <p>Patient: {{ authorization.patient }}</p>
+      <p>Selected Laboratory Orders:</p>
+      <ul>
+        <li *ngFor="let laborauftrag of laborauftrags">
+          {{ laborauftrag.id }}
+          {{ laborauftrag.status }}
+          {{ laborauftrag.description }}
+          {{ laborauftrag.datum }}
+        </li>
+      </ul>
+
+      <button mat-flat-button (click)="submitData()" [disabled]="submitting">
+        {{ submitting ? 'Submitting...' : 'Submit' }}
       </button>
     </div>
   </mat-step>

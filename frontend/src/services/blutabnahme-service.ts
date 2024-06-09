@@ -5,7 +5,9 @@ import {Injectable} from "@angular/core";
 import {environment} from "../environments/environment";
 
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class BlutabnahmeService {
 constructor(private http: HttpClient) {}
 
@@ -19,6 +21,10 @@ constructor(private http: HttpClient) {}
 
   createBlutabnahme(blutabnahme: Blutabnahme): Observable<Blutabnahme> {
     return this.http.post<Blutabnahme>(`${environment.apiUrl}/blutabnahme`, blutabnahme);
+  }
+
+  createBatchBlutabnahme(blutabnahmen: Blutabnahme[]): Observable<Blutabnahme[]> {
+    return this.http.post<Blutabnahme[]>(`${environment.apiUrl}/blutabnahme/batch`, blutabnahmen);
   }
 
   updateBlutabnahme(id: string, blutabnahme: Blutabnahme): Observable<Blutabnahme> {

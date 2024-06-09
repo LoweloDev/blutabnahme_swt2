@@ -3,4 +3,5 @@ export class Probe {
   auftragsnummer?: string;
   art?: string;
   material?: string;
+  blutabnahme_id?: string;
 }
