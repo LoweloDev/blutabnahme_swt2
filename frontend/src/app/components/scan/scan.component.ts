@@ -58,7 +58,7 @@ export class ScanComponent implements OnInit, AfterViewInit {
 
     this.scanner.scanSuccess.subscribe((result: string) => {
       console.log(this.stepData);
-      this.stepData.authorization[this.stepData.stepId] = result;
+      this.stepData[this.stepData.stepId] = result;
       this.save();
     });
   }

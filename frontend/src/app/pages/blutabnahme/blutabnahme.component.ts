@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { ScanComponent } from "../../components/scan/scan.component";
 import { MatStep, MatStepLabel, MatStepper, MatStepperNext } from "@angular/material/stepper";
-import { JsonPipe, NgForOf } from "@angular/common";
+import {JsonPipe, NgForOf, NgIf, NgTemplateOutlet} from "@angular/common";
 import { MatButton } from "@angular/material/button";
 import { PopupService } from "../../../services/popup-service";
 import { ComponentType } from "@angular/cdk/portal";
@@ -14,6 +14,7 @@ import {GenericDialogType} from "../../../consts/enums";
 import {LaborauftragSelectedComponent} from "../../components/laborauftrag-selected/laborauftrag-selected.component";
 import {Router} from "@angular/router";
 import {BlutabnahmeService} from "../../../services/blutabnahme-service";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-blutabnahme',
@@ -26,45 +27,41 @@ import {BlutabnahmeService} from "../../../services/blutabnahme-service";
     MatButton,
     MatStepperNext,
     JsonPipe,
-    LaborauftragSelectedComponent
+    LaborauftragSelectedComponent,
+    NgIf,
+    NgTemplateOutlet
   ],
   templateUrl: './blutabnahme.component.html',
   styleUrls: ['./blutabnahme.component.css']
 })
-export class BlutabnahmeComponent {
+export class BlutabnahmeComponent implements OnInit {
+  isDesktop: boolean = true;
   @ViewChild(MatStepper, { static: false })
   stepper?: MatStepper;
   currentStep = 0;
-  authorization: { patient: string, mitarbeiter: string, [key: string]: string } = { patient: '', mitarbeiter: '' };
+  scanData: { patient?: string, mitarbeiter?: string, probe?: string } | any = { };
   blutabnahme: Map<Laborauftrag, Blutabnahme>;
   probe: Map<Blutabnahme, Probe>;
   laborauftrags: Laborauftrag[] = [];
 
-  constructor(public dialog: MatDialog, private popupService: PopupService, private router: Router, private blutAbnahmeService: BlutabnahmeService) {}
+  constructor(public dialog: MatDialog, protected popupService: PopupService, private router: Router, private blutAbnahmeService: BlutabnahmeService, private breakpointObserver: BreakpointObserver) {}
 
-  openDialog(component: ComponentType<unknown>, additionalData: { stepId: string, [key: string]: any}, callback: (result: any, stepId: string) => void): void {
-    const dialogRef = this.dialog.open(component, {
-      data:{
-        ...additionalData,
-        authorization: this.authorization,
-        blutabnahme: this.blutabnahme,
-        probe: this.probe,
-        laborauftrags: this.laborauftrags,
-        filters: this.authorization,
-      }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      callback(result, additionalData.stepId);
-    });
+  getCurrentStateOfDataset = (additionalData: any) => {
+    return {
+      ...additionalData,
+      patient: this.scanData.patient,
+      mitarbeiter: this.scanData.mitarbeiter,
+      blutabnahme: this.blutabnahme,
+      probe: this.probe,
+      laborauftrag: this.laborauftrags,
+      filters: this.scanData,
+    }
   }
 
   scanCallback = (result: any, key: string) => {
+    console.log(result, key)
     if (result) {
-      console.log(this.authorization)
-      console.log(result);
-      console.log(this);
-      this.authorization[key] = result;
+      this.scanData[key] = result[key];
       this.currentStep++;
       this.stepper?.next();
     } else {
@@ -82,6 +79,14 @@ export class BlutabnahmeComponent {
 
   submitting: boolean = false;
 
+  ngOnInit() {
+    this.breakpointObserver.observe([
+      Breakpoints.Handset
+    ]).subscribe(result => {
+      this.isDesktop = !result.matches;
+    });
+
+  }
   async submitData() {
     this.submitting = true;
     try {
@@ -94,6 +99,15 @@ export class BlutabnahmeComponent {
     } finally {
       this.submitting = false;
     }
+  }
+
+  showSummary(blutabnahmeMap: any) {
+    console.log("HEREHEREHRE")
+    console.log(blutabnahmeMap)
+    // next step
+    this.blutabnahme = blutabnahmeMap;
+    this.currentStep++;
+    this.stepper?.next();
   }
 
   showSuccessMessage() {

@@ -1,3 +1,36 @@
-<div>
-  {{ laborauftrags | json }}
-</div>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let laborauftrag of laborauftrags">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ laborauftrag.description }} ({{ laborauftrag.id }})
+      </mat-panel-title>
+      <mat-panel-description>
+        Status: {{ laborauftrag.status }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      <p><strong>Patient ID:</strong> {{ laborauftrag.patientId }}</p>
+      <p><strong>Arzt ID:</strong> {{ laborauftrag.mitarbeiterId }}</p>
+      <p><strong>Labor ID:</strong> {{ laborauftrag.laborId }}</p>
+      <p><strong>Date:</strong> {{ laborauftrag.datum | date }}</p>
+    </div>
+    <!--- list of proben -->
+    <div>
+      <h3>Proben</h3>
+      <ul>
+        <li *ngFor="let probe of probe">
+          <p><strong>Probe ID:</strong> {{ probe.id }}</p>
+          <p><strong>Probe Typ:</strong> {{ probe.material }}</p>
+          <p><strong>Probe Status:</strong> {{ probe.blutabnahme_id }}</p>
+          <p><strong>Probe Datum:</strong> {{ probe.timestamp | date }}</p>
+        </li>
+      </ul>
+      </div>
+    <button mat-flat-button (click)="handleLaborauftrag(laborauftrag)">
+      Blutabnahme-Röhrchen scannen
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>
+<button mat-flat-button (click)="submitBlutabnahmeData()" [disabled]="laborauftrags.length === 0">
+  {{ 'Submit' }}
+</button>

@@ -1,7 +1,7 @@
 export class Probe {
   id?: string;
-  auftragsnummer?: string;
-  art?: string;
+  laborauftrag_id?: string;
   material?: string;
+  timestamp?: Date;
   blutabnahme_id?: string;
 }

@@ -3,3 +3,4 @@ export interface GenericError {
     cause?: string;
     object?: any;
 }
+

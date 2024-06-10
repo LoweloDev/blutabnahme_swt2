@@ -41,8 +41,8 @@ export class LaborauftragTableComponent {
   @Output() laborauftragSelected = new EventEmitter<any>();
   displayedColumns: string[] = ['select', 'id', 'patientId', 'arztId', 'laborId', 'datum', 'status'];
   dataSource: Laborauftrag[] = [
-    new Laborauftrag('1', 'p1', 'a1', 'l1', new Date('2023-01-01'), 'Pending'),
-    new Laborauftrag('2', 'p2', 'a2', 'l2', new Date('2023-02-01'), 'Completed'),
+    new Laborauftrag('1350310910', 'p1', 'a1', '1235001501051', new Date('2023-01-01'), 'Pending'),
+    new Laborauftrag('2135015011', 'p2', 'a2', '1501205010501', new Date('2023-02-01'), 'Completed'),
     // Add more instances as needed
   ];
   selection = new Set<Laborauftrag>();
