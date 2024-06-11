@@ -14,6 +14,7 @@ import {Blutabnahme} from "../../../models/blutabnahme";
 import {PopupService} from "../../../services/popup-service";
 import {MatStepper} from "@angular/material/stepper";
 import {ScanComponent} from "../scan/scan.component";
+import {StateService} from "../../../services/state-service";
 
 @Component({
   selector: 'app-laborauftrag-selected',
@@ -40,15 +41,18 @@ export class LaborauftragSelectedComponent {
   blutabnahme: Map<Laborauftrag, Blutabnahme> = new Map<Laborauftrag, Blutabnahme>();
   probe: Probe[] = [];
   currentLaborauftrag?: Laborauftrag;
-  @Output() blutabnahmeCompletedEvent = new EventEmitter<any>();
-  constructor(protected popupService: PopupService) {
+  // @Output() blutabnahmeCompletedEvent = new EventEmitter<any>();
+  constructor(protected popupService: PopupService, private stateService: StateService) {
   }
 
-  submitBlutabnahmeData(): void {
-    console.log(this.blutabnahme)
-    this.blutabnahmeCompletedEvent.emit(this.blutabnahme);
-    console.log("HERE")
-  }
+  // Event emitter broken loses observer probably. Open Issue in angular
+  // submitBlutabnahmeData(): void {
+  //   console.log(this.blutabnahme)
+  //   this.blutabnahmeCompletedEvent.emit(this.blutabnahme);
+  //   console.log("HERE")
+  // }
+
+
 
   handleLaborauftrag = (laborauftrag: Laborauftrag) => {
     this.currentLaborauftrag = laborauftrag;
@@ -83,4 +87,8 @@ export class LaborauftragSelectedComponent {
     }
   }
   protected readonly ScanComponent = ScanComponent;
+
+  submitBlutabnahmeData() {
+    this.stateService.blutabnahmeSubject.next(this.blutabnahme);
+  }
 }

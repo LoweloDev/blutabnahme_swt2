@@ -30,7 +30,7 @@
       Blutabnahme-Röhrchen scannen
     </button>
   </mat-expansion-panel>
+  <button mat-flat-button (click)="submitBlutabnahmeData()" [disabled]="laborauftrags.length === 0">
+    {{ 'Submit' }}
+  </button>
 </mat-accordion>
-<button mat-flat-button (click)="submitBlutabnahmeData()" [disabled]="laborauftrags.length === 0">
-  {{ 'Submit' }}
-</button>

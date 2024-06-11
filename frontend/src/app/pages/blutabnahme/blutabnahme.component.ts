@@ -15,7 +15,15 @@ import {LaborauftragSelectedComponent} from "../../components/laborauftrag-selec
 import {Router} from "@angular/router";
 import {BlutabnahmeService} from "../../../services/blutabnahme-service";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
+import {StateService} from "../../../services/state-service";
+import {take} from "rxjs";
 
+// TODO DEsign fixes
+// TODO Filter von TAbelle automatisch
+// TODO abbruch stepper
+// TODO error handling
+// TODO generify dialog
+// TODO data management page
 @Component({
   selector: 'app-blutabnahme',
   standalone: true,
@@ -44,7 +52,7 @@ export class BlutabnahmeComponent implements OnInit {
   probe: Map<Blutabnahme, Probe>;
   laborauftrags: Laborauftrag[] = [];
 
-  constructor(public dialog: MatDialog, protected popupService: PopupService, private router: Router, private blutAbnahmeService: BlutabnahmeService, private breakpointObserver: BreakpointObserver) {}
+  constructor(public dialog: MatDialog, protected popupService: PopupService, private router: Router, private blutAbnahmeService: BlutabnahmeService, private breakpointObserver: BreakpointObserver, private stateService: StateService) {}
 
   getCurrentStateOfDataset = (additionalData: any) => {
     return {
@@ -86,6 +94,12 @@ export class BlutabnahmeComponent implements OnInit {
       this.isDesktop = !result.matches;
     });
 
+    this.stateService.blutabnahmeSubject.pipe(take(1)).subscribe((blutabnahme) => {
+      console.log("CHAGNED");
+      console.log(blutabnahme);
+      // this.blutabnahme = blutabnahme;
+      this.showSummary(blutabnahme);
+    })
   }
   async submitData() {
     this.submitting = true;
