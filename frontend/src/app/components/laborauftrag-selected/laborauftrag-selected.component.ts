@@ -37,22 +37,12 @@ import {StateService} from "../../../services/state-service";
 })
 export class LaborauftragSelectedComponent {
   @Input() laborauftrags: Laborauftrag[] = [];
-  @Input() authorization: { patient: string, mitarbeiter: string, [key: string]: string } = { patient: '', mitarbeiter: '' };
+  @Input() authorization: { patient_id: string, mitarbeiter_id: string, [key: string]: string } = { patient_id: '', mitarbeiter_id: '' };
   blutabnahme: Map<Laborauftrag, Blutabnahme> = new Map<Laborauftrag, Blutabnahme>();
   probe: Probe[] = [];
   currentLaborauftrag?: Laborauftrag;
-  // @Output() blutabnahmeCompletedEvent = new EventEmitter<any>();
   constructor(protected popupService: PopupService, private stateService: StateService) {
   }
-
-  // Event emitter broken loses observer probably. Open Issue in angular
-  // submitBlutabnahmeData(): void {
-  //   console.log(this.blutabnahme)
-  //   this.blutabnahmeCompletedEvent.emit(this.blutabnahme);
-  //   console.log("HERE")
-  // }
-
-
 
   handleLaborauftrag = (laborauftrag: Laborauftrag) => {
     this.currentLaborauftrag = laborauftrag;
@@ -65,8 +55,8 @@ export class LaborauftragSelectedComponent {
       const blutabnahme: Blutabnahme = {
         laborauftrag_id: laborauftrag?.id,
         timestamp: new Date(),
-        mitarbeiter_id: this.authorization.mitarbeiter,
-        patient_id: this.authorization.patient,
+        mitarbeiter_id: this.authorization.mitarbeiter_id,
+        patient_id: this.authorization.patient_id,
         proben: [],
       };
       // find laborauftrag

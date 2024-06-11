@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ErrorDialogComponent } from './error-dialog.component';
+import { ContentWrapperComponent } from './content-wrapper.component';
 
-describe('ErrorDialogComponent', () => {
-  let component: ErrorDialogComponent;
-  let fixture: ComponentFixture<ErrorDialogComponent>;
+describe('ContentWrapperComponent', () => {
+  let component: ContentWrapperComponent;
+  let fixture: ComponentFixture<ContentWrapperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ErrorDialogComponent]
+      imports: [ContentWrapperComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ErrorDialogComponent);
+    fixture = TestBed.createComponent(ContentWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
