@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
 import {MatDialog} from "@angular/material/dialog";
-import {ErrorDialogComponent} from "../app/components/error-dialog/error-dialog.component";
+import {DialogComponent} from "../app/components/dialog/dialog.component";
 import {GenericError} from "../models/generic-error";
 import {ComponentType} from "@angular/cdk/portal";
+import {GenericSuccess} from "../models/generic-success";
 
 @Injectable(
   {providedIn: 'root'}
@@ -12,12 +13,18 @@ export class PopupService {
   }
 
   showError(error: GenericError): void {
-    this.dialog.open(ErrorDialogComponent, {
+    this.dialog.open(DialogComponent<GenericError>, {
       data: error
     });
   }
 
-  openDialog(component: ComponentType<unknown>, additionalData: { stepId: string, [key: string]: any}, callback: (result: any, stepId: string) => void): void {
+  showSuccess(message: string): void {
+    this.dialog.open(DialogComponent<GenericSuccess>, {
+      data: message
+    });
+  }
+
+  openStepDialog(component: ComponentType<unknown>, additionalData: { stepId: string, [key: string]: any}, callback: (result: any, stepId: string) => void): void {
     const dialogRef = this.dialog.open(component, {
       data:{
         ...additionalData,

@@ -44,13 +44,14 @@ export class LaborauftragSelectedComponent {
   constructor(protected popupService: PopupService, private stateService: StateService) {
   }
 
+  // TODO check if stepId/key correct
   handleLaborauftrag = (laborauftrag: Laborauftrag) => {
     this.currentLaborauftrag = laborauftrag;
-    this.popupService.openDialog(ScanComponent, { stepId: 'probe', laborauftrag: laborauftrag }, this.scanCallback);
+    this.popupService.openStepDialog(ScanComponent, { stepId: 'probe', laborauftrag: laborauftrag }, this.scanCallback);
   }
 
   scanCallback = (result: any, key: any) => {
-    const laborauftrag = this.laborauftrags.find((laborauftrag) => laborauftrag.id === this.currentLaborauftrag?.id);
+    const laborauftrag = this.currentLaborauftrag;
     if (result && laborauftrag) {
       const blutabnahme: Blutabnahme = {
         laborauftrag_id: laborauftrag?.id,
@@ -59,17 +60,9 @@ export class LaborauftragSelectedComponent {
         patient_id: this.authorization.patient_id,
         proben: [],
       };
-      // find laborauftrag
-      // last 4 digits of laborAuftragId
-      console.log(blutabnahme);
-      console.log(laborauftrag?.id);
       const materialart = laborauftrag?.id.slice(-4);
-
-      console.log(materialart)
-      console.log(
-        result
-      )
-      this.probe.push({ blutabnahme_id: key, id: result[key], material: materialart, timestamp: new Date()});
+      this.probe.push({ id: result[key], material: materialart, timestamp: new Date()});
+      console.log(this.probe);
       blutabnahme.proben = this.probe;
       this.blutabnahme.set(laborauftrag, blutabnahme);
       } else {

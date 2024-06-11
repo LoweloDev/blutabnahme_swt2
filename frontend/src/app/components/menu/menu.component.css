@@ -19,3 +19,8 @@
   top: 1%;
   left: 1%;
 }
+@media (min-width: 600px) {
+  .global-sidenav {
+    width: auto;
+  }
+}

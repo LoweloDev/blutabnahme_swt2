@@ -55,9 +55,7 @@ export class LaborauftragTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.filters)
     this.service.getLaborauftraege().subscribe((data) => {
-      //filter
       this.dataSource = data.filter((laborauftrag) => {
         return Object.keys(this.filters).every((key) => {
           return laborauftrag[key as keyof Laborauftrag] === this.filters[key];

@@ -1,104 +1,102 @@
-<mat-horizontal-stepper *ngIf="isDesktop" [selectedIndex]="currentStep">
-  <mat-step>
-    <ng-template matStepLabel>Mitarbeiter scannen</ng-template>
-    <div>
-      <button mat-flat-button (click)="popupService.openDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'patient'}), scanCallback)" [disabled]="0 !== currentStep">
-        Bitte Mitarbeiter-Karte scannen
-      </button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Patient scannen</ng-template>
-    <div>
-      <button mat-flat-button (click)="popupService.openDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'mitarbeiter'}), scanCallback)" [disabled]="1 !== currentStep">
-        Bitte Patienten-Armband scannen
-      </button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Laborauftrag bearbeiten</ng-template>
-    <div>
-      <button mat-flat-button (click)="popupService.openDialog(LaborauftragDialogComponent, getCurrentStateOfDataset({ stepId: 'laborauftrag', style: GenericDialogType.TABLE }), laboratoryCallback)" [disabled]="2 !== currentStep">
-        Laboraufträge auswählen
-      </button>
-        <!-- shows in expansion panel each laborauftrag und dort wird dann über inputs bearbeitet oder halt das blutabnahmeröhrchen übern button eingescanned -->
+<button class="closeButton" mat-fab (click)="cancelStepper()">
+  <mat-icon>close</mat-icon>
+</button>
+<app-content-wrapper>
+  <mat-horizontal-stepper class="stepper" *ngIf="isDesktop" [selectedIndex]="currentStep">
+    <mat-step>
+      <ng-template matStepLabel>Mitarbeiter scannen</ng-template>
+      <div>
+        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'patient_id'}), scanCallback)" [disabled]="0 !== currentStep">
+          Bitte Mitarbeiter-Karte scannen
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Patient scannen</ng-template>
+      <div>
+        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'mitarbeiter_id'}), scanCallback)" [disabled]="1 !== currentStep">
+          Bitte Patienten-Armband scannen
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Laborauftrag bearbeiten</ng-template>
+      <div>
+        <button mat-flat-button (click)="popupService.openStepDialog(LaborauftragDialogComponent, getCurrentStateOfDataset({ stepId: 'laborauftrag', style: GenericDialogType.TABLE }), laboratoryCallback)" [disabled]="2 !== currentStep">
+          Laboraufträge auswählen
+        </button>
         <app-laborauftrag-selected [laborauftrags]="laborauftrags" [authorization]="scanData"></app-laborauftrag-selected>
-    </div>
-  </mat-step>
+      </div>
+    </mat-step>
 
-  <mat-step>
-    <ng-template matStepLabel>Summary</ng-template>
-    <div>
-      <h3>Summary</h3>
-      <p>Employee: {{ scanData.mitarbeiter }}</p>
-      <p>Patient: {{ scanData.patient }}</p>
-      <p>Selected Laboratory Orders:</p>
-      <ul>
-        <li *ngFor="let laborauftrag of laborauftrags">
-          {{ laborauftrag.id }}
-          {{ laborauftrag.status }}
-          {{ laborauftrag.description }}
-          {{ laborauftrag.datum }}
-        </li>
-      </ul>
+    <mat-step>
+      <ng-template matStepLabel>Summary</ng-template>
+      <div>
+        <h3>Summary</h3>
+        <p>Employee: {{ scanData.mitarbeiter_id }}</p>
+        <p>Patient: {{ scanData.patient_id }}</p>
+        <p>Selected Laboratory Orders:</p>
+        <ul>
+          <li *ngFor="let laborauftrag of laborauftrags">
+            {{ laborauftrag.id }}
+            {{ laborauftrag.status }}
+            {{ laborauftrag.description }}
+            {{ laborauftrag.datum }}
+          </li>
+        </ul>
+        <button mat-flat-button (click)="submitData()" [disabled]="submitting">
+          {{ submitting ? 'Submitting...' : 'Submit' }}
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
 
-      <button mat-flat-button (click)="submitData()" [disabled]="submitting">
-        {{ submitting ? 'Submitting...' : 'Submit' }}
-      </button>
-    </div>
-  </mat-step>
-</mat-horizontal-stepper>
-
-<mat-vertical-stepper *ngIf="!isDesktop" [selectedIndex]="currentStep">
-  <mat-step>
-    <ng-template matStepLabel>Mitarbeiter scannen</ng-template>
-    <div>
-      <button mat-flat-button (click)="popupService.openDialog(ScanComponent, { stepId: 'patient' }, scanCallback)" [disabled]="0 !== currentStep">
-        Bitte Mitarbeiter-Karte scannen
-      </button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Patient scannen</ng-template>
-    <div>
-      <button mat-flat-button (click)="popupService.openDialog(ScanComponent, { stepId: 'mitarbeiter' }, scanCallback)" [disabled]="1 !== currentStep">
-        Bitte Patienten-Armband scannen
-      </button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Laborauftrag bearbeiten</ng-template>
-    <div>
-      <button mat-flat-button (click)="popupService.openDialog(LaborauftragDialogComponent, { stepId: 'laborauftrag', style: GenericDialogType.TABLE }, laboratoryCallback)" [disabled]="2 !== currentStep">
-        Laboraufträge auswählen
-      </button>
-        <!-- shows in expansion panel each laborauftrag und dort wird dann über inputs bearbeitet oder halt das blutabnahmeröhrchen übern button eingescanned -->
+  <mat-vertical-stepper *ngIf="!isDesktop" [selectedIndex]="currentStep">
+    <mat-step>
+      <ng-template matStepLabel>Mitarbeiter scannen</ng-template>
+      <div>
+        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, { stepId: 'patient' }, scanCallback)" [disabled]="0 !== currentStep">
+          Bitte Mitarbeiter-Karte scannen
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Patient scannen</ng-template>
+      <div>
+        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, { stepId: 'mitarbeiter' }, scanCallback)" [disabled]="1 !== currentStep">
+          Bitte Patienten-Armband scannen
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Laborauftrag bearbeiten</ng-template>
+      <div>
+        <button mat-flat-button (click)="popupService.openStepDialog(LaborauftragDialogComponent, { stepId: 'laborauftrag', style: GenericDialogType.TABLE }, laboratoryCallback)" [disabled]="2 !== currentStep">
+          Laboraufträge auswählen
+        </button>
         <app-laborauftrag-selected [laborauftrags]="laborauftrags"></app-laborauftrag-selected>
-    </div>
-  </mat-step>
+      </div>
+    </mat-step>
 
-  <mat-step>
-    <ng-template matStepLabel>Summary</ng-template>
-    <div>
-      <h3>Summary</h3>
-      <p>Employee: {{ scanData.mitarbeiter }}</p>
-      <p>Patient: {{ scanData.patient }}</p>
-      <p>Selected Laboratory Orders:</p>
-      <ul>
-        <li *ngFor="let laborauftrag of laborauftrags">
-          {{ laborauftrag.id }}
-          {{ laborauftrag.status }}
-          {{ laborauftrag.description }}
-          {{ laborauftrag.datum }}
-        </li>
-      </ul>
-
-      <button mat-flat-button (click)="submitData()" [disabled]="submitting">
-        {{ submitting ? 'Submitting...' : 'Submit' }}
-      </button>
-    </div>
-  </mat-step>
-</mat-vertical-stepper>
-
-
-<!-- template not working gives provider error -->
+    <mat-step>
+      <ng-template matStepLabel>Summary</ng-template>
+      <div>
+        <h3>Summary</h3>
+        <p>Employee: {{ scanData.mitarbeiter_id }}</p>
+        <p>Patient: {{ scanData.patient_id }}</p>
+        <p>Selected Laboratory Orders:</p>
+        <ul>
+          <li *ngFor="let laborauftrag of laborauftrags">
+            {{ laborauftrag.id }}
+            {{ laborauftrag.status }}
+            {{ laborauftrag.description }}
+            {{ laborauftrag.datum }}
+          </li>
+        </ul>
+        <button mat-flat-button (click)="submitData()" [disabled]="submitting">
+          {{ submitting ? 'Submitting...' : 'Submit' }}
+        </button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</app-content-wrapper>

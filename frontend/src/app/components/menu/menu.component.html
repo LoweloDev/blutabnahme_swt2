@@ -1,5 +1,5 @@
 <mat-drawer-container class="global-sidenav">
-  <mat-drawer class="global-sidenav" #drawer mode="side">
+  <mat-drawer class="global-sidenav" #drawer [mode]="drawerMode">
     <mat-toolbar>
       <span>Main Menu</span>
       <button mat-icon-button (click)="drawer.toggle()">

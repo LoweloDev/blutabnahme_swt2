@@ -3,7 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { ScanComponent } from "../../components/scan/scan.component";
 import { MatStep, MatStepLabel, MatStepper, MatStepperNext } from "@angular/material/stepper";
 import {JsonPipe, NgForOf, NgIf, NgTemplateOutlet} from "@angular/common";
-import { MatButton } from "@angular/material/button";
+import {MatButton, MatFabButton, MatIconButton} from "@angular/material/button";
 import { PopupService } from "../../../services/popup-service";
 import { Blutabnahme } from "../../../models/blutabnahme";
 import { Probe } from "../../../models/probe";
@@ -11,20 +11,18 @@ import { Laborauftrag } from "../../../models/laborauftrag";
 import { LaborauftragDialogComponent } from "../../components/laborauftrag-dialog/laborauftrag-dialog.component";
 import {GenericDialogType} from "../../../consts/enums";
 import {LaborauftragSelectedComponent} from "../../components/laborauftrag-selected/laborauftrag-selected.component";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {BlutabnahmeService} from "../../../services/blutabnahme-service";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {StateService} from "../../../services/state-service";
-import {take} from "rxjs";
+import {catchError, of, take} from "rxjs";
+import {MatIcon} from "@angular/material/icon";
+import {ContentWrapperComponent} from "../../components/content-wrapper/content-wrapper.component";
 
-// TODO DEsign fixes
-// TODO Filter von TAbelle automatisch
-// TODO abbruch stepper
-// TODO error handling
-// TODO generify dialog
 // TODO data management page
-// TODO remove bloat
 // TODO NFC & external scan
+// TODO DEsign fixes
+// TODO error handling
 @Component({
   selector: 'app-blutabnahme',
   standalone: true,
@@ -38,7 +36,12 @@ import {take} from "rxjs";
     JsonPipe,
     LaborauftragSelectedComponent,
     NgIf,
-    NgTemplateOutlet
+    NgTemplateOutlet,
+    MatIconButton,
+    MatIcon,
+    ContentWrapperComponent,
+    MatFabButton,
+    RouterLink
   ],
   templateUrl: './blutabnahme.component.html',
   styleUrls: ['./blutabnahme.component.css']
@@ -48,7 +51,7 @@ export class BlutabnahmeComponent implements OnInit {
   @ViewChild(MatStepper, { static: false })
   stepper?: MatStepper;
   currentStep = 0;
-  scanData: { patient?: string, mitarbeiter?: string, probe?: string } | any = { };
+  scanData: { patient_id?: string, mitarbeiter_id?: string, probe_id?: string } | any = { };
   blutabnahme: Map<Laborauftrag, Blutabnahme>;
   probe: Map<Blutabnahme, Probe>;
   laborauftrags: Laborauftrag[] = [];
@@ -58,12 +61,14 @@ export class BlutabnahmeComponent implements OnInit {
   getCurrentStateOfDataset = (additionalData: any) => {
     return {
       ...additionalData,
-      patient: this.scanData.patient,
-      mitarbeiter: this.scanData.mitarbeiter,
+      patient: this.scanData.patient_id,
+      mitarbeiter: this.scanData.mitarbeiter_id,
       blutabnahme: this.blutabnahme,
       probe: this.probe,
       laborauftrag: this.laborauftrags,
-      filters: this.scanData,
+      filters: {
+        patient_id: this.scanData.patient_id,
+      },
     }
   }
 
@@ -101,16 +106,20 @@ export class BlutabnahmeComponent implements OnInit {
   }
   async submitData() {
     this.submitting = true;
-    try {
-      this.blutAbnahmeService.createBatchBlutabnahme(Array.from(this.blutabnahme.values()));
-      this.showSuccessMessage();
-      await this.redirectToDashboard();
-    } catch (error) {
-      console.error(error);
-      this.popupService.showError({ message: 'Error submitting data' });
-    } finally {
-      this.submitting = false;
-    }
+      this.blutAbnahmeService.createBatchBlutabnahme(Array.from(this.blutabnahme.values())).pipe(
+        catchError((error) => {
+          console.error(error);
+          this.popupService.showError({ message: 'Error submitting data' });
+          return of(undefined);
+        }
+      )).subscribe((result) => {
+        if(result) {
+          this.popupService.showSuccess('Data submitted successfully');
+          this.redirectToDashboard();
+        }
+        this.submitting = false;
+      });
+
   }
 
   showSummary(blutabnahmeMap: any) {
@@ -119,13 +128,6 @@ export class BlutabnahmeComponent implements OnInit {
     this.currentStep++;
     this.stepper?.next();
   }
-
-  showSuccessMessage() {
-    setTimeout(() => {
-      this.popupService.showError({ message: 'Data submitted successfully' })
-    }, 2000);
-  }
-
   async redirectToDashboard() {
     await this.router.navigate(['/dashboard']);
   }
@@ -133,4 +135,8 @@ export class BlutabnahmeComponent implements OnInit {
   protected readonly ScanComponent = ScanComponent;
   protected readonly LaborauftragDialogComponent = LaborauftragDialogComponent;
   protected readonly GenericDialogType = GenericDialogType;
+
+  cancelStepper() {
+    this.router.navigate(['/dashboard']);
+  }
 }

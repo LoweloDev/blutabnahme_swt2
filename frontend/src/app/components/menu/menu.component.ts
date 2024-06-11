@@ -1,11 +1,12 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/core';
 import {MatButtonModule} from "@angular/material/button";
-import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatDrawer, MatDrawerMode, MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
 import {NgIf} from "@angular/common";
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-menu',
@@ -14,10 +15,23 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   styleUrls: ['./menu.component.css'],
   imports: [MatSidenavModule, MatButtonModule, MatToolbar, MatIcon, NgIf, MatNavList, MatListItem, RouterLink, RouterOutlet],
 })
-export class MenuComponent {
-  open = false;
+export class MenuComponent implements OnInit, AfterViewInit {
+  isDesktop: boolean = false;
+  drawerMode: MatDrawerMode = 'over';
+  @ViewChild('drawer') drawer: MatDrawer;
 
-  toggle(open: boolean): void {
-    this.open = open;
+  constructor(private breakpointObserver: BreakpointObserver) {}
+ngOnInit() {
+}
+
+  ngAfterViewInit() {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isDesktop = !result.matches;
+      this.drawerMode = this.isDesktop ? 'side' : 'over';
+    });
+
+    if (this.isDesktop) {
+      // this.drawer.toggle();
+    }
   }
 }

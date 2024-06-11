@@ -1,0 +1,9 @@
+.closeButton {
+  position: absolute;
+  bottom: 20px; /* Adjust this value to move the button higher or lower */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure it is above other elements */
+  background-color: rgb(168, 33, 0);
+  color: #fff;
+}
