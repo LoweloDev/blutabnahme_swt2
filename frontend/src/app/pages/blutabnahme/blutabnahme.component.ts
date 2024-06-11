@@ -5,7 +5,6 @@ import { MatStep, MatStepLabel, MatStepper, MatStepperNext } from "@angular/mate
 import {JsonPipe, NgForOf, NgIf, NgTemplateOutlet} from "@angular/common";
 import { MatButton } from "@angular/material/button";
 import { PopupService } from "../../../services/popup-service";
-import { ComponentType } from "@angular/cdk/portal";
 import { Blutabnahme } from "../../../models/blutabnahme";
 import { Probe } from "../../../models/probe";
 import { Laborauftrag } from "../../../models/laborauftrag";
@@ -24,6 +23,8 @@ import {take} from "rxjs";
 // TODO error handling
 // TODO generify dialog
 // TODO data management page
+// TODO remove bloat
+// TODO NFC & external scan
 @Component({
   selector: 'app-blutabnahme',
   standalone: true,
@@ -95,9 +96,6 @@ export class BlutabnahmeComponent implements OnInit {
     });
 
     this.stateService.blutabnahmeSubject.pipe(take(1)).subscribe((blutabnahme) => {
-      console.log("CHAGNED");
-      console.log(blutabnahme);
-      // this.blutabnahme = blutabnahme;
       this.showSummary(blutabnahme);
     })
   }
@@ -116,8 +114,6 @@ export class BlutabnahmeComponent implements OnInit {
   }
 
   showSummary(blutabnahmeMap: any) {
-    console.log("HEREHEREHRE")
-    console.log(blutabnahmeMap)
     // next step
     this.blutabnahme = blutabnahmeMap;
     this.currentStep++;
