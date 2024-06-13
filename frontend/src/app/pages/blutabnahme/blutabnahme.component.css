@@ -1,5 +1,5 @@
 .closeButton {
-  position: absolute;
+  position: fixed;
   bottom: 20px; /* Adjust this value to move the button higher or lower */
   left: 50%;
   transform: translateX(-50%);

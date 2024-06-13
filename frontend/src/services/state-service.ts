@@ -1,8 +1,9 @@
-import {Injectable} from "@angular/core";
+import {Injectable, Signal} from "@angular/core";
 import {MatDialog} from "@angular/material/dialog";
 import {Subject} from "rxjs";
 import {Laborauftrag} from "../models/laborauftrag";
 import {Blutabnahme} from "../models/blutabnahme";
+import {int} from "@zxing/library/es2015/customTypings";
 
 @Injectable(
   {providedIn: 'root'}
