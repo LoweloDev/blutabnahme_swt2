@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
-import { CreateLaborauftragDto } from './dto/create-laborauftrag.dto';
-import { UpdateLaborauftragDto } from './dto/update-laborauftrag.dto';
-import { Repository } from 'typeorm';
-import { Laborauftrag } from './entities/laborauftrag.entity';
+import { Injectable } from "@nestjs/common";
+import { CreateLaborauftragDto } from "./dto/create-laborauftrag.dto";
+import { UpdateLaborauftragDto } from "./dto/update-laborauftrag.dto";
+import { Repository } from "typeorm";
+import { Laborauftrag } from "./entities/laborauftrag.entity";
 
 @Injectable()
 export class LaborauftragService {

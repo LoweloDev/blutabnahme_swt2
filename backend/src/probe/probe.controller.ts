@@ -1,9 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { ProbeService } from './probe.service';
-import { CreateProbeDto } from './dto/create-probe.dto';
-import { UpdateProbeDto } from './dto/update-probe.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from "@nestjs/common";
+import { ProbeService } from "./probe.service";
+import { CreateProbeDto } from "./dto/create-probe.dto";
+import { UpdateProbeDto } from "./dto/update-probe.dto";
 
-@Controller('probe')
+@Controller("probe")
 export class ProbeController {
   constructor(private readonly probeService: ProbeService) {}
 
@@ -17,18 +25,21 @@ export class ProbeController {
     return this.probeService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.probeService.findOne(+id);
+  @Get(":id")
+  async findOne(@Param("id") id: string) {
+    return await this.probeService.findOne(id); // Use string id directly
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProbeDto: UpdateProbeDto) {
-    return this.probeService.update(+id, updateProbeDto);
+  @Patch(":id")
+  async update(
+    @Param("id") id: string,
+    @Body() updateProbeDto: UpdateProbeDto,
+  ) {
+    return await this.probeService.update(id, updateProbeDto); // Use string id directly
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.probeService.remove(+id);
+  @Delete(":id")
+  async remove(@Param("id") id: string) {
+    return await this.probeService.remove(id); // Use string id directly
   }
 }

@@ -3,15 +3,16 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
-  OneToMany, RelationId
-} from 'typeorm';
-import { Laborauftrag } from 'src/laborauftrag/entities/laborauftrag.entity';
-import { Probe } from 'src/probe/entities/probe.entity';
+  OneToMany,
+  RelationId,
+} from "typeorm";
+import { Laborauftrag } from "src/laborauftrag/entities/laborauftrag.entity";
+import { Probe } from "src/probe/entities/probe.entity";
 
 @Entity()
 export class Blutabnahme {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
   @Column({ nullable: true })
   mitarbeiter_id?: string;
@@ -19,7 +20,7 @@ export class Blutabnahme {
   @Column({ nullable: true })
   patient_id?: string;
 
-  @Column({ type: 'timestamp', nullable: true })
+  @Column({ type: "timestamp", nullable: true })
   timestamp?: Date;
 
   @OneToMany(() => Probe, (probe) => probe.blutabnahme)

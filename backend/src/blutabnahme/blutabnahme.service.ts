@@ -1,26 +1,44 @@
-import { Injectable } from '@nestjs/common';
-import { CreateBlutabnahmeDto } from './dto/create-blutabnahme.dto';
-import { UpdateBlutabnahmeDto } from './dto/update-blutabnahme.dto';
+import { Injectable } from "@nestjs/common";
+import { CreateBlutabnahmeDto } from "./dto/create-blutabnahme.dto";
+import { UpdateBlutabnahmeDto } from "./dto/update-blutabnahme.dto";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { Blutabnahme } from "./entities/blutabnahme.entity";
 
 @Injectable()
 export class BlutabnahmeService {
-  create(createBlutabnahmeDto: CreateBlutabnahmeDto) {
-    return 'This action adds a new blutabnahme';
+  constructor(
+    @InjectRepository(Blutabnahme)
+    private readonly blutabnahmeRepository: Repository<Blutabnahme>,
+  ) {}
+
+  async create(createBlutabnahmeDto: CreateBlutabnahmeDto) {
+    return await this.blutabnahmeRepository.save(
+      createBlutabnahmeDto,
+    );
   }
 
-  findAll() {
-    return `This action returns all blutabnahme`;
+  async findAll() {
+    return await this.blutabnahmeRepository.find({
+      relations: ["laborauftrag", "proben"],
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} blutabnahme`;
+  async findOne(id: string) {
+    return await this.blutabnahmeRepository.findOne({
+      where: { id },
+      relations: ["laborauftrag", "proben"],
+    });
   }
 
-  update(id: number, updateBlutabnahmeDto: UpdateBlutabnahmeDto) {
-    return `This action updates a #${id} blutabnahme`;
+  async update(id: string, updateBlutabnahmeDto: UpdateBlutabnahmeDto) {
+    await this.blutabnahmeRepository.update(id, updateBlutabnahmeDto);
+    return await this.findOne(id); // Return the updated blutabnahme
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} blutabnahme`;
+  async remove(id: string) {
+    const deletedBlutabnahme = await this.findOne(id); // Optional: get details before removing
+    await this.blutabnahmeRepository.delete(id);
+    return deletedBlutabnahme; // Optional: return details of the removed blutabnahme
   }
 }

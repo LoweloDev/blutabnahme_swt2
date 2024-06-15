@@ -1,9 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { BlutabnahmeService } from './blutabnahme.service';
-import { CreateBlutabnahmeDto } from './dto/create-blutabnahme.dto';
-import { UpdateBlutabnahmeDto } from './dto/update-blutabnahme.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from "@nestjs/common";
+import { BlutabnahmeService } from "./blutabnahme.service";
+import { CreateBlutabnahmeDto } from "./dto/create-blutabnahme.dto";
+import { UpdateBlutabnahmeDto } from "./dto/update-blutabnahme.dto";
 
-@Controller('blutabnahme')
+@Controller("blutabnahme")
 export class BlutabnahmeController {
   constructor(private readonly blutabnahmeService: BlutabnahmeService) {}
 
@@ -17,18 +25,21 @@ export class BlutabnahmeController {
     return this.blutabnahmeService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.blutabnahmeService.findOne(+id);
+  @Get(":id")
+  async findOne(@Param("id") id: string) {
+    return await this.blutabnahmeService.findOne(id); // Use string id directly
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateBlutabnahmeDto: UpdateBlutabnahmeDto) {
-    return this.blutabnahmeService.update(+id, updateBlutabnahmeDto);
+  @Patch(":id")
+  async update(
+    @Param("id") id: string,
+    @Body() updateBlutabnahmeDto: UpdateBlutabnahmeDto,
+  ) {
+    return await this.blutabnahmeService.update(id, updateBlutabnahmeDto); // Use string id directly
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.blutabnahmeService.remove(+id);
+  @Delete(":id")
+  async remove(@Param("id") id: string) {
+    return await this.blutabnahmeService.remove(id); // Use string id directly
   }
 }

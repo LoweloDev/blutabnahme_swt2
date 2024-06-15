@@ -1,9 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { LaborauftragService } from './laborauftrag.service';
-import { CreateLaborauftragDto } from './dto/create-laborauftrag.dto';
-import { UpdateLaborauftragDto } from './dto/update-laborauftrag.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from "@nestjs/common";
+import { LaborauftragService } from "./laborauftrag.service";
+import { CreateLaborauftragDto } from "./dto/create-laborauftrag.dto";
+import { UpdateLaborauftragDto } from "./dto/update-laborauftrag.dto";
 
-@Controller('laborauftrag')
+@Controller("laborauftrag")
 export class LaborauftragController {
   constructor(private readonly laborauftragService: LaborauftragService) {}
 
@@ -17,18 +25,21 @@ export class LaborauftragController {
     return this.laborauftragService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.laborauftragService.findOne(+id);
+  @Get(":id")
+  async findOne(@Param("id") id: string) {
+    return await this.laborauftragService.findOne(id); // Use string id directly
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLaborauftragDto: UpdateLaborauftragDto) {
-    return this.laborauftragService.update(+id, updateLaborauftragDto);
+  @Patch(":id")
+  async update(
+    @Param("id") id: string,
+    @Body() updateLaborauftragDto: UpdateLaborauftragDto,
+  ) {
+    return await this.laborauftragService.update(id, updateLaborauftragDto); // Use string id directly
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.laborauftragService.remove(+id);
+  @Delete(":id")
+  async remove(@Param("id") id: string) {
+    return await this.laborauftragService.remove(id); // Use string id directly
   }
 }
