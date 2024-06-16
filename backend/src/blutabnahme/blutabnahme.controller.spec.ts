@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { BlutabnahmeController } from './blutabnahme.controller';
-import { BlutabnahmeService } from './blutabnahme.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { BlutabnahmeController } from "./blutabnahme.controller";
+import { BlutabnahmeService } from "./blutabnahme.service";
 
-describe('BlutabnahmeController', () => {
+describe("BlutabnahmeController", () => {
   let controller: BlutabnahmeController;
 
   beforeEach(async () => {
@@ -14,7 +14,7 @@ describe('BlutabnahmeController', () => {
     controller = module.get<BlutabnahmeController>(BlutabnahmeController);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(controller).toBeDefined();
   });
 });
