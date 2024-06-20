@@ -1,20 +1,19 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { LaborauftragController } from './laborauftrag.controller';
-import { LaborauftragService } from './laborauftrag.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { LaborauftragController } from "./laborauftrag.controller";
+import { AppModule } from "../app.module";
 
-describe('LaborauftragController', () => {
+describe("LaborauftragController", () => {
   let controller: LaborauftragController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [LaborauftragController],
-      providers: [LaborauftragService],
+      imports: [AppModule],
     }).compile();
 
     controller = module.get<LaborauftragController>(LaborauftragController);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(controller).toBeDefined();
   });
 });
