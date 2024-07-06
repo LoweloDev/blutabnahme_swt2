@@ -41,4 +41,8 @@ export class BlutabnahmeService {
     await this.blutabnahmeRepository.delete(id);
     return deletedBlutabnahme; // Optional: return details of the removed blutabnahme
   }
+
+  createBatch(createBlutabnahmeDto: CreateBlutabnahmeDto[]) {
+    return this.blutabnahmeRepository.save(createBlutabnahmeDto);
+  }
 }

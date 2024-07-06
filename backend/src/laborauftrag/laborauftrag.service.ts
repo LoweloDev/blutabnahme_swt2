@@ -7,8 +7,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 
 @Injectable()
 export class LaborauftragService {
-
-  constructor(@InjectRepository(Laborauftrag) private readonly repo: Repository<Laborauftrag>) {}
+  constructor(
+    @InjectRepository(Laborauftrag)
+    private readonly repo: Repository<Laborauftrag>,
+  ) {}
 
   create(createLaborauftragDto: CreateLaborauftragDto) {
     return this.repo.save(createLaborauftragDto);

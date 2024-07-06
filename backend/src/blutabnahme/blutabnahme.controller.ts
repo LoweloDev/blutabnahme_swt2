@@ -25,6 +25,11 @@ export class BlutabnahmeController {
     return this.blutabnahmeService.findAll();
   }
 
+  @Post("batch")
+  createBatch(@Body() createBlutabnahmeDto: CreateBlutabnahmeDto[]) {
+    return this.blutabnahmeService.createBatch(createBlutabnahmeDto);
+  }
+
   @Get(":id")
   async findOne(@Param("id") id: string) {
     return await this.blutabnahmeService.findOne(id); // Use string id directly

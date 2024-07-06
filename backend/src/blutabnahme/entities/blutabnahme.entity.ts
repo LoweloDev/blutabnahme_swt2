@@ -28,7 +28,7 @@ export class Blutabnahme {
   @MockValue()
   timestamp?: Date;
 
-  @OneToMany(() => Probe, (probe) => probe.blutabnahme)
+  @OneToMany(() => Probe, (probe) => probe.blutabnahme, { cascade: true })
   @MockValue()
   proben: Probe[];
 
