@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { Blutabnahme } from "../../blutabnahme/entities/blutabnahme.entity";
-import { MockValue } from "../../shared/decorators/mock-value.decorator";
+import { MockValue } from "../../../shared/decorators/mock-value.decorator";
 
 @Entity()
 export class Probe {

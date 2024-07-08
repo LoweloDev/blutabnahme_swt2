@@ -1,6 +1,13 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 
+// TODO fake auth of mitarbeiter and patient
+// TODO status checks / Query params
+// TODO Tests
+// TODO DOCKER MQTT
+// TODO subscribe in FE to MQTT
+// TODO more FE QoL features usecase based
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 

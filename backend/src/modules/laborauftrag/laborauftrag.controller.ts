@@ -16,8 +16,15 @@ export class LaborauftragController {
   constructor(private readonly laborauftragService: LaborauftragService) {}
 
   @Post()
-  create(@Body() createLaborauftragDto: CreateLaborauftragDto) {
-    return this.laborauftragService.create(createLaborauftragDto);
+  create(
+    @Body()
+    createLaborauftragDto: CreateLaborauftragDto[] | CreateLaborauftragDto,
+  ) {
+    return this.laborauftragService.create(
+      Array.isArray(createLaborauftragDto)
+        ? createLaborauftragDto
+        : [createLaborauftragDto],
+    );
   }
 
   @Get()

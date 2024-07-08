@@ -1,11 +1,9 @@
 import { Module } from "@nestjs/common";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import { LaborauftragModule } from "./laborauftrag/laborauftrag.module";
-import { BlutabnahmeModule } from "./blutabnahme/blutabnahme.module";
-import { ProbeModule } from "./probe/probe.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { TypeOrmConfigService } from "./config/database";
+import { TypeOrmConfigService } from "./data/database";
+import { LaborauftragModule } from "./modules/laborauftrag/laborauftrag.module";
+import { BlutabnahmeModule } from "./modules/blutabnahme/blutabnahme.module";
+import { ProbeModule } from "./modules/probe/probe.module";
 
 @Module({
   imports: [
@@ -16,7 +14,5 @@ import { TypeOrmConfigService } from "./config/database";
     BlutabnahmeModule,
     ProbeModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

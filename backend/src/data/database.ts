@@ -1,7 +1,7 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from "@nestjs/typeorm";
 import { Injectable } from "@nestjs/common";
-import { DbConfig } from "./typeorm/typeorm.config";
+import { DbConfig } from "./typeorm.config";
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {

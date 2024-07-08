@@ -1,10 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { Blutabnahme } from "../../blutabnahme/entities/blutabnahme.entity";
-import { MockValue } from "../../shared/decorators/mock-value.decorator";
+import { MockValue } from "../../../shared/decorators/mock-value.decorator";
 
 @Entity()
 export class Laborauftrag {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   @MockValue()
   id: string;
 
@@ -20,7 +20,7 @@ export class Laborauftrag {
   @MockValue()
   laborId: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: "date" })
   @MockValue()
   datum: Date;
 
@@ -28,7 +28,7 @@ export class Laborauftrag {
   @MockValue()
   status: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ type: "text", nullable: true })
   @MockValue()
   description: string;
 

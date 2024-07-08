@@ -6,9 +6,9 @@ import {
   OneToMany,
   RelationId,
 } from "typeorm";
-import { Laborauftrag } from "src/laborauftrag/entities/laborauftrag.entity";
-import { Probe } from "src/probe/entities/probe.entity";
-import { MockValue } from "../../shared/decorators/mock-value.decorator";
+import { MockValue } from "../../../shared/decorators/mock-value.decorator";
+import { Probe } from "../../probe/entities/probe.entity";
+import { Laborauftrag } from "../../laborauftrag/entities/laborauftrag.entity";
 
 @Entity()
 export class Blutabnahme {

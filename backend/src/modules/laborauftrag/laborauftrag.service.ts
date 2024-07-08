@@ -12,7 +12,7 @@ export class LaborauftragService {
     private readonly repo: Repository<Laborauftrag>,
   ) {}
 
-  create(createLaborauftragDto: CreateLaborauftragDto) {
+  create(createLaborauftragDto: CreateLaborauftragDto[]) {
     return this.repo.save(createLaborauftragDto);
   }
 

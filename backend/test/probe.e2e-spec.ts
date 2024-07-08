@@ -3,8 +3,8 @@ import { INestApplication } from "@nestjs/common";
 import * as request from "supertest";
 import { AppModule } from "../src/app.module";
 import { MockFactory } from "../src/shared/services/mock-factory";
-import { Probe } from "../src/probe/entities/probe.entity";
 import { UUID } from "../src/shared/util/uuid";
+import { Probe } from "../src/modules/probe/entities/probe.entity";
 
 describe("ProbeController (e2e)", () => {
   let app: INestApplication;
