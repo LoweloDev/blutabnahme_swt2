@@ -19,10 +19,10 @@ import {catchError, of, take} from "rxjs";
 import {MatIcon} from "@angular/material/icon";
 import {ContentWrapperComponent} from "../../components/content-wrapper/content-wrapper.component";
 
-// TODO data management page
+// TODO fix Proben Duplikate anzeige
 // TODO NFC & external scan
-// TODO DEsign fixes
-// TODO error handling
+// FIXME Popup Messages
+
 @Component({
   selector: 'app-blutabnahme',
   standalone: true,
