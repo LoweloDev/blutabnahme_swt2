@@ -1,3 +1,5 @@
+// TODO maybe setup instead of app close
+
 // import { Test, TestingModule } from "@nestjs/testing";
 // import { TypeOrmModule } from "@nestjs/typeorm";
 // import { getConnection } from "typeorm";

@@ -4,7 +4,6 @@ import * as request from "supertest";
 import { AppModule } from "../src/app.module";
 import { MockFactory } from "../src/shared/services/mock-factory";
 import { Probe } from "../src/probe/entities/probe.entity";
-// import { ProbeService } from "../src/probe/probe.service";
 import { UUID } from "../src/shared/util/uuid";
 
 describe("ProbeController (e2e)", () => {
@@ -33,7 +32,7 @@ describe("ProbeController (e2e)", () => {
   });
 
   afterEach(async () => {
-    await app.close(); // Close the application after each test
+    await app.close();
   });
 
   // it("POST /probe (create)", async () => {

@@ -1,7 +1,7 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from "@nestjs/typeorm";
 import { Injectable } from "@nestjs/common";
-import { typeOrmTestConfig } from "./typeorm/typeorm.config";
+import { DbConfig } from "./typeorm/typeorm.config";
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
@@ -10,7 +10,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
 
   async createTypeOrmOptions(): Promise<TypeOrmModuleOptions> {
     TypeOrmConfigService.dataSource = new DataSource(
-      <DataSourceOptions>typeOrmTestConfig,
+      <DataSourceOptions>(<unknown>process.env.DB_CONFIG || DbConfig.LOCAL),
     );
 
     TypeOrmConfigService.connection =
