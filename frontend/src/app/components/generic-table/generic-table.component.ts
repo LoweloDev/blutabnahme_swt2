@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -34,16 +34,27 @@ import {NgForOf} from "@angular/common";
   templateUrl: './generic-table.component.html',
   styleUrl: './generic-table.component.css'
 })
-export class GenericTableComponent implements OnInit {
-  @Input() dataSource: any[] = [];
+export class GenericTableComponent<T extends object> implements OnInit, OnChanges {
+  @Input() dataSource: T[] = [];
   displayedColumns: string[] = [];
-  tableDataSource = new MatTableDataSource<any>();
+  tableDataSource = new MatTableDataSource<T>();
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
   ngOnInit(): void {
+    this.initializeTable();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['dataSource']) {
+      this.initializeTable();
+    }
+  }
+
+  private initializeTable(): void {
     if (this.dataSource.length > 0) {
+      console.log(this.dataSource);
       this.displayedColumns = Object.keys(this.dataSource[0]);
       this.tableDataSource.data = this.dataSource;
       this.tableDataSource.paginator = this.paginator;

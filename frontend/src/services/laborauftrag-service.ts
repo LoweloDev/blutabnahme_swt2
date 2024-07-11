@@ -10,17 +10,9 @@ import {Laborauftrag} from "../models/laborauftrag";
 )
 export class LaborauftragService {
 constructor(private http: HttpClient) {}
-    // getLaborauftraege(): Observable<Laborauftrag[]> {
-    //   return this.http.get<Laborauftrag[]>(`${environment.apiUrl}/laborauftrag`);
-    // }
-
   getLaborauftraege(): Observable<Laborauftrag[]> {
-  return of([
-    new Laborauftrag('1350310910', '12202929288338', '12202929288338', '1235001501051', new Date('2023-01-01'), 'Pending'),
-    new Laborauftrag('2135015011', '12202929288338', '12202929288338', '1501205010501', new Date('2023-02-01'), 'Completed'),
-    // Add more instances as needed
-  ])
-  }
+      return this.http.get<Laborauftrag[]>(`${environment.apiUrl}/laborauftrag`);
+}
 
     getLaborauftrag(id: string): Observable<Laborauftrag> {
       return this.http.get<Laborauftrag>(`${environment.apiUrl}/laborauftrag/${id}`);

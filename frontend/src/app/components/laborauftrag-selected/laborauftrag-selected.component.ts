@@ -40,11 +40,11 @@ export class LaborauftragSelectedComponent {
   @Input() authorization: { patient_id: string, mitarbeiter_id: string, [key: string]: string } = { patient_id: '', mitarbeiter_id: '' };
   blutabnahme: Map<Laborauftrag, Blutabnahme> = new Map<Laborauftrag, Blutabnahme>();
   probe: Probe[] = [];
+  probeMap: Map<string, Probe[]> = new Map<string, Probe[]>();
   currentLaborauftrag?: Laborauftrag;
   constructor(protected popupService: PopupService, private stateService: StateService) {
   }
 
-  // TODO check if stepId/key correct
   handleLaborauftrag = (laborauftrag: Laborauftrag) => {
     this.currentLaborauftrag = laborauftrag;
     this.popupService.openStepDialog(ScanComponent, { stepId: 'probe', laborauftrag: laborauftrag }, this.scanCallback);
@@ -55,6 +55,7 @@ export class LaborauftragSelectedComponent {
     if (result && laborauftrag) {
       const blutabnahme: Blutabnahme = {
         laborauftrag_id: laborauftrag?.id,
+        laborauftrag: { ...laborauftrag },
         timestamp: new Date(),
         mitarbeiter_id: this.authorization.mitarbeiter_id,
         patient_id: this.authorization.patient_id,
@@ -62,11 +63,17 @@ export class LaborauftragSelectedComponent {
       };
       const materialart = laborauftrag?.id.slice(-4);
       this.probe.push({ id: result[key], material: materialart, timestamp: new Date()});
+      this.probeMap.set(laborauftrag.id, this.probe);
       console.log(this.probe);
       blutabnahme.proben = this.probe;
       this.blutabnahme.set(laborauftrag, blutabnahme);
       } else {
-      this.popupService.showError({ message: "Halo I hans kein Daten bekomen bite fesuch nochmael k?" });
+      this.popupService.showError(
+        {
+          title: 'Fehler',
+          message: 'Fehler beim Scannen',
+        }
+      );
     }
   }
   protected readonly ScanComponent = ScanComponent;
@@ -74,4 +81,6 @@ export class LaborauftragSelectedComponent {
   submitBlutabnahmeData() {
     this.stateService.blutabnahmeSubject.next(this.blutabnahme);
   }
+
+  protected readonly Probe = Probe;
 }

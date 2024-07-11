@@ -50,6 +50,7 @@ export class LaborauftragTableComponent implements OnInit {
   submitSelection(): void {
     this.laborauftragSelected.emit(Array.from(this.selection));
   }
+
   isSelected(row: Laborauftrag): boolean {
     return this.selection.has(row);
   }

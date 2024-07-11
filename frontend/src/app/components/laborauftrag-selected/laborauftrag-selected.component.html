@@ -18,7 +18,7 @@
     <div>
       <h3>Proben</h3>
       <ul>
-        <li *ngFor="let probe of probe">
+        <li *ngFor="let probe of probeMap?.get(laborauftrag.id)">
           <p><strong>Probe ID:</strong> {{ probe.id }}</p>
           <p><strong>Probe Typ:</strong> {{ probe.material }}</p>
           <p><strong>Probe Status:</strong> {{ probe.blutabnahme_id }}</p>

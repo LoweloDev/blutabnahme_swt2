@@ -79,7 +79,12 @@ export class BlutabnahmeComponent implements OnInit {
       this.currentStep++;
       this.stepper?.next();
     } else {
-      this.popupService.showError({ message: "Halo I hans kein Daten bekomen bite fesuch nochmael k?" });
+      this.popupService.showError(
+        {
+          title: 'Error',
+          message: 'Scan failed. Please try again.'
+        }
+      );
     }
   }
 
@@ -87,7 +92,12 @@ export class BlutabnahmeComponent implements OnInit {
     if (result) {
       this.laborauftrags = result;
     } else {
-      this.popupService.showError({ message: "Halo I hans kein Daten bekomen bite fesuch nochmael k?" });
+      this.popupService.showError(
+        {
+          title: 'Error',
+          message: 'Laboratory data not found.'
+        }
+      );
     }
   }
 
@@ -109,17 +119,25 @@ export class BlutabnahmeComponent implements OnInit {
       this.blutAbnahmeService.createBatchBlutabnahme(Array.from(this.blutabnahme.values())).pipe(
         catchError((error) => {
           console.error(error);
-          this.popupService.showError({ message: 'Error submitting data' });
+          this.popupService.showError(
+            {
+              title: 'Error',
+              message: 'Data submission failed'
+            }
+          );
           return of(undefined);
         }
       )).subscribe((result) => {
         if(result) {
-          this.popupService.showSuccess('Data submitted successfully');
+          this.popupService.showSuccess({
+            title: 'Success',
+            message: 'Data submitted successfully'
+          });
+          this.submitting = false;
           this.redirectToDashboard();
         }
         this.submitting = false;
       });
-
   }
 
   showSummary(blutabnahmeMap: any) {

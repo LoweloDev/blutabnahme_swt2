@@ -18,7 +18,7 @@ export class PopupService {
     });
   }
 
-  showSuccess(message: string): void {
+  showSuccess(message: GenericSuccess): void {
     this.dialog.open(DialogComponent<GenericSuccess>, {
       data: message
     });
