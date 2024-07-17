@@ -7,6 +7,7 @@ import {MatInput, MatInputModule} from "@angular/material/input";
 import {NgIf} from "@angular/common";
 import {MatButton} from "@angular/material/button";
 import {Router} from "@angular/router";
+import {take} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -32,8 +33,17 @@ export class LoginComponent {
   mitarbeiterId: any;
   constructor(private authService: AuthService, private router: Router) {}
   login() {
-    this.authService.setToken(this.mitarbeiterId);
-    this.router.navigate(['/dashboard']);
+    this.authService.isAuthorized(this.mitarbeiterId).subscribe({
+      next: (response) => {
+        console.log('Status Code:', response.status);
+        this.authService.setToken(this.mitarbeiterId);
+        this.router.navigate(['/dashboard']);
+      },
+      error: (error) => {
+        console.log('Error Status Code:', error.status);
+        // Handle error
+      }
+    });
   }
 
   logout() {
