@@ -41,12 +41,7 @@ export class LoginComponent {
       },
       error: (error) => {
         console.log('Error Status Code:', error.status);
-        // Handle error
       }
     });
-  }
-
-  logout() {
-    this.authService.clearToken();
   }
 }

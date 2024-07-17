@@ -1,6 +1,5 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
 import { MitarbeiterService } from "./mitarbeiter.service";
-import { Request } from "express";
 
 @Injectable()
 export class AuthGuard implements CanActivate {

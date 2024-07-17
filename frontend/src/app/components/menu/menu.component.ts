@@ -7,6 +7,7 @@ import {NgIf} from "@angular/common";
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
+import {AuthService} from "../../../services/auth-service";
 
 @Component({
   selector: 'app-menu',
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
   drawerMode: MatDrawerMode = 'over';
   @ViewChild('drawer') drawer: MatDrawer;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, protected authService: AuthService) {}
 ngOnInit() {
 }
 

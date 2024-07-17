@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../environments/environment";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,8 @@ import {environment} from "../environments/environment";
 export class AuthService {
   private token: string | null = null;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
-
 
   setToken(newToken: string) {
     this.token = newToken;
@@ -21,12 +21,14 @@ export class AuthService {
   }
 
   // Optionally, you can add a method to clear the token
-  clearToken() {
+  logout() {
     this.token = null;
+    this.router.navigate(['/login']);
   }
 
   isAuthorized(mitarbeiterId: string) {
-    return this.http.post(`${environment.apiUrl}/auth/login`, undefined, {
+    console.log("isAuthorized", mitarbeiterId);
+    return this.http.post(`${environment.apiUrl}/auth/login`, {}, {
       headers: new HttpHeaders({
         "authorization": mitarbeiterId,
       }),
