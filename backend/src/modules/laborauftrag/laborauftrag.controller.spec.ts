@@ -1,6 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { LaborauftragController } from "./laborauftrag.controller";
-import { AppModule } from "../app.module";
+import { AppModule } from "../../app.module";
 
 describe("LaborauftragController", () => {
   let controller: LaborauftragController;

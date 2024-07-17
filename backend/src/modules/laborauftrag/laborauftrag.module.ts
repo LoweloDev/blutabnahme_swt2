@@ -5,7 +5,9 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { Laborauftrag } from "./entities/laborauftrag.entity";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Laborauftrag], "default")],
+  imports: [
+    TypeOrmModule.forFeature([Laborauftrag], "default"),
+  ],
   controllers: [LaborauftragController],
   providers: [LaborauftragService],
 })

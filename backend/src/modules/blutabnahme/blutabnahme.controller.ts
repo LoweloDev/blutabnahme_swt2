@@ -5,13 +5,15 @@ import {
   Body,
   Patch,
   Param,
-  Delete,
+  Delete, UseGuards,
 } from "@nestjs/common";
 import { BlutabnahmeService } from "./blutabnahme.service";
 import { CreateBlutabnahmeDto } from "./dto/create-blutabnahme.dto";
 import { UpdateBlutabnahmeDto } from "./dto/update-blutabnahme.dto";
+import { AuthGuard } from "../../shared/services/auth.guard";
 
 @Controller("blutabnahme")
+// @UseGuards(AuthGuard)
 export class BlutabnahmeController {
   constructor(private readonly blutabnahmeService: BlutabnahmeService) {}
 

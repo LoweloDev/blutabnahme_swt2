@@ -1,7 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { BlutabnahmeController } from "./blutabnahme.controller";
-import { BlutabnahmeService } from "./blutabnahme.service";
-import { AppModule } from "../app.module";
+import { AppModule } from "../../app.module";
 
 describe("BlutabnahmeController", () => {
   let controller: BlutabnahmeController;

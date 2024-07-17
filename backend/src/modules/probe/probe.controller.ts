@@ -5,13 +5,15 @@ import {
   Body,
   Patch,
   Param,
-  Delete,
+  Delete, UseGuards,
 } from "@nestjs/common";
 import { ProbeService } from "./probe.service";
 import { CreateProbeDto } from "./dto/create-probe.dto";
 import { UpdateProbeDto } from "./dto/update-probe.dto";
+import { AuthGuard } from "../../shared/services/auth.guard";
 
 @Controller("probe")
+// @UseGuards(AuthGuard)
 export class ProbeController {
   constructor(private readonly probeService: ProbeService) {}
 

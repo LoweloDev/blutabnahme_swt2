@@ -4,14 +4,14 @@ import { Injectable } from "@nestjs/common";
 export class MitarbeiterService {
   constructor() {}
 
-  async verifyAsync(mitarbeiterId: string): Promise<any> {
+  async verifyAsync(mitarbeiterId: string): Promise<boolean> {
     return this.fakeMitarbeiterVerificationEndpoint(mitarbeiterId);
   }
 
   // fake endpoint
   async fakeMitarbeiterVerificationEndpoint(
     mitarbeiterId: string,
-  ): Promise<any> {
+  ): Promise<boolean> {
     const fakeMitarbeitersArray = [
       {
         id: "123",
@@ -25,8 +25,10 @@ export class MitarbeiterService {
       },
     ];
 
-    return fakeMitarbeitersArray.find(
+    const found = fakeMitarbeitersArray.find(
       (mitarbeiter) => mitarbeiter.id === mitarbeiterId,
     );
+
+    return !!found;
   }
 }

@@ -5,13 +5,15 @@ import {
   Body,
   Patch,
   Param,
-  Delete,
+  Delete, UseGuards,
 } from "@nestjs/common";
 import { LaborauftragService } from "./laborauftrag.service";
 import { CreateLaborauftragDto } from "./dto/create-laborauftrag.dto";
 import { UpdateLaborauftragDto } from "./dto/update-laborauftrag.dto";
+import { AuthGuard } from "../../shared/services/auth.guard";
 
 @Controller("laborauftrag")
+// @UseGuards(AuthGuard)
 export class LaborauftragController {
   constructor(private readonly laborauftragService: LaborauftragService) {}
 
