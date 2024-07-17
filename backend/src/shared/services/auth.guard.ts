@@ -7,22 +7,22 @@ export class AuthGuard implements CanActivate {
   constructor(private mitarbeiterVerificationService: MitarbeiterService) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
+
+    console.log("HERE", context)
     const request = context.switchToHttp().getRequest();
-    const mitarbeiterId = this.extractTokenFromHeader(request);
+    console.log("HERE", request.headers.authorization);
+    const mitarbeiterId = request.headers.authorization;
+    console.log("HERE", mitarbeiterId)
     if (!mitarbeiterId) {
       throw new UnauthorizedException();
     }
     try {
+      console.log("TRY")
       request["authorized"] =
         await this.mitarbeiterVerificationService.verifyAsync(mitarbeiterId);
     } catch {
       throw new UnauthorizedException();
     }
     return true;
-  }
-
-  private extractTokenFromHeader(request: Request): string | undefined {
-    const [type, token] = request.headers.authorization?.split(" ") ?? [];
-    return type === "Bearer" ? token : undefined;
   }
 }

@@ -13,7 +13,7 @@ import { UpdateLaborauftragDto } from "./dto/update-laborauftrag.dto";
 import { AuthGuard } from "../../shared/services/auth.guard";
 
 @Controller("laborauftrag")
-// @UseGuards(AuthGuard)
+@UseGuards(AuthGuard)
 export class LaborauftragController {
   constructor(private readonly laborauftragService: LaborauftragService) {}
 

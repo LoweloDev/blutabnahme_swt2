@@ -7,10 +7,11 @@ import { DbConfig } from "./typeorm.config";
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   public static dataSource: DataSource;
   public static connection: DataSource;
+  public static dbConfigOverride: DbConfig;
 
   async createTypeOrmOptions(): Promise<TypeOrmModuleOptions> {
     TypeOrmConfigService.dataSource = new DataSource(
-      <DataSourceOptions>(<unknown>process.env.DB_CONFIG || DbConfig.LOCAL),
+      <DataSourceOptions>(<unknown>TypeOrmConfigService.dbConfigOverride),
     );
 
     TypeOrmConfigService.connection =

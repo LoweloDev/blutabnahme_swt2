@@ -13,7 +13,7 @@ import { UpdateProbeDto } from "./dto/update-probe.dto";
 import { AuthGuard } from "../../shared/services/auth.guard";
 
 @Controller("probe")
-// @UseGuards(AuthGuard)
+@UseGuards(AuthGuard)
 export class ProbeController {
   constructor(private readonly probeService: ProbeService) {}
 

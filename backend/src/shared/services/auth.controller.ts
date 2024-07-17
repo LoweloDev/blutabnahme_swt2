@@ -6,7 +6,7 @@ export class AuthController {
   constructor(private authservice: MitarbeiterService) {
   }
   @Post("login")
-  login(@Headers("Authorization") auth: string) {
+  login(@Headers("authorization") auth: string) {
     return this.authservice.verifyAsync(auth);
   }
 }

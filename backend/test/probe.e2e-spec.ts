@@ -5,8 +5,11 @@ import { AppModule } from "../src/app.module";
 import { MockFactory } from "../src/shared/services/mock-factory";
 import { UUID } from "../src/shared/util/uuid";
 import { Probe } from "../src/modules/probe/entities/probe.entity";
+import { DbConfig } from "../src/data/typeorm.config";
+import { TypeOrmConfigService } from "../src/data/database";
 
 describe("ProbeController (e2e)", () => {
+  TypeOrmConfigService.dbConfigOverride = DbConfig.MEMORY;
   let app: INestApplication;
   let probe: Probe;
   beforeEach(async () => {
@@ -23,6 +26,7 @@ describe("ProbeController (e2e)", () => {
 
     const response = await request(app.getHttpServer())
       .post("/probe")
+      .set("authorization", "123")
       .send(newProbe as Probe)
       .expect(201);
 
@@ -35,25 +39,11 @@ describe("ProbeController (e2e)", () => {
     await app.close();
   });
 
-  // it("POST /probe (create)", async () => {
-  //   const newProbe = MockFactory.mock(Probe, UUID.randomUUID) as Probe;
-  //   probe = newProbe;
-  //   console.log("PROBE", newProbe);
-  //
-  //   const response = await request(app.getHttpServer())
-  //     .post("/probe")
-  //     .send(newProbe as Probe)
-  //     .expect(201);
-  //
-  //   expect(response.body).toHaveProperty("id");
-  //   expect(response.body.material).toEqual(newProbe.material);
-  //   expect(response.body.laborauftrag_id).toEqual(newProbe.laborauftrag_id);
-  // });
-
   // Test case for getting all probes
   it("GET /probe (findAll)", async () => {
     const response = await request(app.getHttpServer())
       .get("/probe")
+      .set("authorization", "123")
       .expect(200); // Expect OK status code (200)
 
     expect(response.body).toBeInstanceOf(Array); // Expect an array of probes
@@ -66,6 +56,7 @@ describe("ProbeController (e2e)", () => {
 
     const response = await request(app.getHttpServer())
       .get(`/probe/${probeId}`)
+      .set("authorization", "123")
       .expect(200); // Expect OK status code (200)
 
     console.log("PROBEID", probeId);
@@ -84,6 +75,7 @@ describe("ProbeController (e2e)", () => {
 
     const response = await request(app.getHttpServer())
       .patch(`/probe/${probeId}`)
+      .set("authorization", "123")
       .send(updates)
       .expect(200); // Expect OK status code (200)
 
@@ -98,6 +90,7 @@ describe("ProbeController (e2e)", () => {
 
     const response = await request(app.getHttpServer())
       .delete(`/probe/${probeId}`)
+      .set("authorization", "123")
       .expect(200); // Expect OK status code (200)
 
     expect(response.body).toHaveProperty("id");

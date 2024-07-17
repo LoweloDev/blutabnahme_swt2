@@ -13,7 +13,7 @@ import { UpdateBlutabnahmeDto } from "./dto/update-blutabnahme.dto";
 import { AuthGuard } from "../../shared/services/auth.guard";
 
 @Controller("blutabnahme")
-// @UseGuards(AuthGuard)
+@UseGuards(AuthGuard)
 export class BlutabnahmeController {
   constructor(private readonly blutabnahmeService: BlutabnahmeService) {}
 
