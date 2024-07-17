@@ -22,7 +22,6 @@ describe("ProbeController (e2e)", () => {
 
     const newProbe = MockFactory.mock(Probe, UUID.randomUUID) as Probe;
     probe = newProbe;
-    console.log("PROBE", newProbe);
 
     const response = await request(app.getHttpServer())
       .post("/probe")
@@ -49,6 +48,13 @@ describe("ProbeController (e2e)", () => {
     expect(response.body).toBeInstanceOf(Array); // Expect an array of probes
   });
 
+  test("auth route", async () => {
+    const response = await request(app.getHttpServer())
+      .post("/auth/login")
+      .set("authorization", "123");
+
+    expect(response.status).toBe(201);
+  });
   // Test case for getting a single probe by ID
   it("GET /probe/:id (findOne)", async () => {
     // Assuming a probe is already created with ID '1' (replace with actual ID)
@@ -59,8 +65,6 @@ describe("ProbeController (e2e)", () => {
       .set("authorization", "123")
       .expect(200); // Expect OK status code (200)
 
-    console.log("PROBEID", probeId);
-    console.log("RESPONSE", response.body);
     expect(response.body).toHaveProperty("id");
     expect(response.body.id).toEqual(probeId);
   });

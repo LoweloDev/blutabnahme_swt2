@@ -1,12 +1,21 @@
-import { Controller, Post, Headers } from "@nestjs/common";
+import {
+  Controller,
+  Post,
+  Headers,
+  UnauthorizedException,
+} from "@nestjs/common";
 import { MitarbeiterService } from "./mitarbeiter.service";
 
 @Controller("auth")
 export class AuthController {
-  constructor(private authservice: MitarbeiterService) {
-  }
+  constructor(private authservice: MitarbeiterService) {}
   @Post("login")
-  login(@Headers("authorization") auth: string) {
-    return this.authservice.verifyAsync(auth);
+  async login(@Headers("authorization") auth: string) {
+    const result = await this.authservice.verifyAsync(auth);
+
+    if (!result) {
+      throw new UnauthorizedException();
+    }
+    return result;
   }
 }

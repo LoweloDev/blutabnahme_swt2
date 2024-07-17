@@ -1,9 +1,11 @@
 import { Global, Module } from "@nestjs/common";
 import { MitarbeiterService } from "./mitarbeiter.service";
+import { AuthController } from "./auth.controller";
 
 @Global()
 @Module({
   providers: [MitarbeiterService],
-  exports: [MitarbeiterService], // Export the service so it can be used in other modules
+  exports: [MitarbeiterService],
+  controllers: [AuthController],
 })
 export class ServicesModule {}

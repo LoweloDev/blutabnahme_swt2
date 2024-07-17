@@ -5,7 +5,6 @@ export class MitarbeiterService {
   constructor() {}
 
   async verifyAsync(mitarbeiterId: string): Promise<boolean> {
-    console.log("HERE", mitarbeiterId)
     return this.fakeMitarbeiterVerificationEndpoint(mitarbeiterId);
   }
 
