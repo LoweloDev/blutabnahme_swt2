@@ -4,7 +4,7 @@ import * as mqtt from "mqtt";
 @Injectable()
 export class MqttService {
   private client: mqtt.MqttClient;
-  private connectionPromise: Promise<void>;
+  private readonly connectionPromise: Promise<void>;
   private connectionResolve: () => void;
   private connectionReject: (error: Error) => void;
 
@@ -24,12 +24,6 @@ export class MqttService {
   close() {
     if (this.client) {
       console.log("MqttService closing...");
-      this.client.end();
-    }
-  }
-  onDestroy() {
-    if (this.client) {
-      console.log("MqttService destroying...");
       this.client.end();
     }
   }

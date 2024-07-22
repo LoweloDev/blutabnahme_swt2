@@ -637,3 +637,70 @@
 1721650601: New client connected from 172.24.0.1:63914 as mqttjs_4753b69c (p2, c1, k60).
 1721650601: Client mqttjs_230994f4 disconnected.
 1721650601: Client mqttjs_4753b69c disconnected.
+1721650717: New connection from 172.24.0.1:63918 on port 1883.
+1721650717: New connection from 172.24.0.1:63916 on port 1883.
+1721650717: New client connected from 172.24.0.1:63918 as mqttjs_05fe5af7 (p2, c1, k60).
+1721650717: New client connected from 172.24.0.1:63916 as mqttjs_9a28d46d (p2, c1, k60).
+1721650717: Client mqttjs_05fe5af7 closed its connection.
+1721650717: Client mqttjs_9a28d46d closed its connection.
+1721650741: New connection from 172.24.0.1:63922 on port 1883.
+1721650741: New connection from 172.24.0.1:63924 on port 1883.
+1721650741: New client connected from 172.24.0.1:63922 as mqttjs_63a39b4a (p2, c1, k60).
+1721650741: New client connected from 172.24.0.1:63924 as mqttjs_2f37a1b0 (p2, c1, k60).
+1721650741: Client mqttjs_63a39b4a closed its connection.
+1721650741: Client mqttjs_2f37a1b0 closed its connection.
+1721650818: New connection from 172.24.0.1:63926 on port 1883.
+1721650818: New connection from 172.24.0.1:63928 on port 1883.
+1721650818: New client connected from 172.24.0.1:63926 as mqttjs_26e4e6af (p2, c1, k60).
+1721650818: New client connected from 172.24.0.1:63928 as mqttjs_7814aa17 (p2, c1, k60).
+1721650818: Client mqttjs_7814aa17 closed its connection.
+1721650818: Client mqttjs_26e4e6af closed its connection.
+1721650823: Client auto-F6D5A355-5AE0-9598-7D47-A6346E0BE114 disconnected.
+1721650835: New connection from 172.24.0.1:63930 on port 1883.
+1721650835: New client connected from 172.24.0.1:63930 as auto-EC8D9D9B-B85F-FB64-9199-40BF84094B85 (p2, c1, k60).
+1721650841: New connection from 172.24.0.1:63932 on port 1883.
+1721650841: New connection from 172.24.0.1:63934 on port 1883.
+1721650841: New client connected from 172.24.0.1:63932 as mqttjs_057113b9 (p2, c1, k60).
+1721650841: New client connected from 172.24.0.1:63934 as mqttjs_96672a1f (p2, c1, k60).
+1721650841: Client mqttjs_057113b9 closed its connection.
+1721650841: Client mqttjs_96672a1f closed its connection.
+1721650850: New connection from 172.24.0.1:63936 on port 1883.
+1721650850: New connection from 172.24.0.1:63938 on port 1883.
+1721650850: New client connected from 172.24.0.1:63936 as mqttjs_585d5bbf (p2, c1, k60).
+1721650850: New client connected from 172.24.0.1:63938 as mqttjs_e414c19a (p2, c1, k60).
+1721650850: Client mqttjs_585d5bbf closed its connection.
+1721650850: Client mqttjs_e414c19a closed its connection.
+1721650860: Client auto-EC8D9D9B-B85F-FB64-9199-40BF84094B85 disconnected.
+1721650863: New connection from 172.24.0.1:63940 on port 1883.
+1721650863: New client connected from 172.24.0.1:63940 as auto-7A4D148E-FDC5-6687-7DA6-BB4EDCF38202 (p2, c1, k60).
+1721650895: New connection from 172.24.0.1:63944 on port 1883.
+1721650895: New connection from 172.24.0.1:63942 on port 1883.
+1721650895: New client connected from 172.24.0.1:63944 as mqttjs_ab202669 (p2, c1, k60).
+1721650895: New client connected from 172.24.0.1:63942 as mqttjs_ed1f6680 (p2, c1, k60).
+1721650929: New connection from 172.24.0.1:63946 on port 1883.
+1721650929: New connection from 172.24.0.1:63948 on port 1883.
+1721650929: New client connected from 172.24.0.1:63946 as mqttjs_32fc5242 (p2, c1, k60).
+1721650929: New client connected from 172.24.0.1:63948 as mqttjs_ec91e303 (p2, c1, k60).
+1721650938: Client mqttjs_32fc5242 closed its connection.
+1721650938: Client mqttjs_ed1f6680 closed its connection.
+1721650938: Client mqttjs_ab202669 closed its connection.
+1721650938: Client mqttjs_ec91e303 closed its connection.
+1721650973: New connection from 172.24.0.1:63952 on port 1883.
+1721650973: New connection from 172.24.0.1:63950 on port 1883.
+1721650973: New client connected from 172.24.0.1:63952 as mqttjs_20f73da1 (p2, c1, k60).
+1721650973: New client connected from 172.24.0.1:63950 as mqttjs_5966684b (p2, c1, k60).
+1721650973: Client mqttjs_20f73da1 disconnected.
+1721650973: Client mqttjs_5966684b disconnected.
+1721651082: New connection from 172.24.0.1:63956 on port 1883.
+1721651082: New connection from 172.24.0.1:63954 on port 1883.
+1721651082: New client connected from 172.24.0.1:63956 as mqttjs_867b67d8 (p2, c1, k60).
+1721651082: New client connected from 172.24.0.1:63954 as mqttjs_eed396e5 (p2, c1, k60).
+1721651153: Client mqttjs_867b67d8 closed its connection.
+1721651153: Client mqttjs_eed396e5 closed its connection.
+1721651166: New connection from 172.24.0.1:63960 on port 1883.
+1721651166: New connection from 172.24.0.1:63958 on port 1883.
+1721651166: New client connected from 172.24.0.1:63960 as mqttjs_3b19114b (p2, c1, k60).
+1721651166: New client connected from 172.24.0.1:63958 as mqttjs_830cbaae (p2, c1, k60).
+1721651166: Client mqttjs_3b19114b disconnected.
+1721651166: Client mqttjs_830cbaae disconnected.
+1721651172: Client auto-7A4D148E-FDC5-6687-7DA6-BB4EDCF38202 disconnected.
