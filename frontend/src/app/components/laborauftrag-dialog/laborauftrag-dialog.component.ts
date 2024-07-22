@@ -31,7 +31,6 @@ export class LaborauftragDialogComponent {
   }
 
   setLaborauftrag(laborauftrags: Laborauftrag[]): void {
-    console.log(laborauftrags)
     this.laborauftrags = laborauftrags;
 
     if(this.laborauftrags) {

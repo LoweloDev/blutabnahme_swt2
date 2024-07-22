@@ -4,8 +4,79 @@
   </mat-card-header>
   <mat-card-content>
     <ng-container *ngFor="let item of genericDataset | keyvalue">
-      <div><strong>{{item.key}}:</strong> {{item.value}}</div>
+      <div>
+        <strong>{{item.key}}:</strong>
+        <ng-container [ngSwitch]="getType(item.value)">
+          <!-- Handle objects -->
+          <div *ngSwitchCase="'object'">
+            <ng-container *ngFor="let innerKey of getObjectKeys(item.value)">
+              <div style="padding-left: 20px;">
+                <strong>{{innerKey}}:</strong>
+                <ng-container [ngSwitch]="getType(item.value[innerKey])">
+                  <!-- Handle nested objects -->
+                  <div *ngSwitchCase="'object'">
+                    <ng-container *ngFor="let deeperKey of getObjectKeys(item.value[innerKey])">
+                      <div style="padding-left: 20px;">
+                        <strong>{{deeperKey}}:</strong> {{item.value[innerKey][deeperKey]}}
+                      </div>
+                    </ng-container>
+                  </div>
+                  <!-- Handle arrays -->
+                  <div *ngSwitchCase="'array'">
+                    <div *ngFor="let arrayItem of item.value[innerKey]; let i = index" style="padding-left: 20px;">
+                      <strong>Item {{i}}:</strong>
+                      <ng-container [ngSwitch]="getType(arrayItem)">
+                        <!-- Handle array items that are objects -->
+                        <div *ngSwitchCase="'object'">
+                          <ng-container *ngFor="let arrayInnerKey of getObjectKeys(arrayItem)">
+                            <div style="padding-left: 20px;">
+                              <strong>{{arrayInnerKey}}:</strong> {{arrayItem[arrayInnerKey]}}
+                            </div>
+                          </ng-container>
+                        </div>
+                        <!-- Handle array items that are primitives -->
+                        <div *ngSwitchDefault>
+                          {{arrayItem}}
+                        </div>
+                      </ng-container>
+                    </div>
+                  </div>
+                  <!-- Handle primitives -->
+                  <div *ngSwitchDefault>
+                    {{item.value[innerKey]}}
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+          </div>
+          <!-- Handle arrays -->
+          <div *ngSwitchCase="'array'">
+            <div *ngFor="let arrayItem of item.value; let i = index">
+              <div style="padding-left: 20px;">
+                <strong>Item {{i}}:</strong>
+                <ng-container [ngSwitch]="getType(arrayItem)">
+                  <!-- Handle array items that are objects -->
+                  <div *ngSwitchCase="'object'">
+                    <ng-container *ngFor="let arrayItemKey of getObjectKeys(arrayItem)">
+                      <div style="padding-left: 20px;">
+                        <strong>{{arrayItemKey}}:</strong> {{arrayItem[arrayItemKey]}}
+                      </div>
+                    </ng-container>
+                  </div>
+                  <!-- Handle array items that are primitives -->
+                  <div *ngSwitchDefault>
+                    {{arrayItem}}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <!-- Handle primitives -->
+          <div *ngSwitchDefault>
+            {{item.value}}
+          </div>
+        </ng-container>
+      </div>
     </ng-container>
   </mat-card-content>
 </mat-card>
-

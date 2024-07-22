@@ -26,7 +26,6 @@ export class BlutabnahmenComponent implements OnInit {
     this.stateService.genericComponentServiceMap.set('blutabnahmen', this.service);
     this.service.getAll().subscribe((data) => {
       this.blutabnahmen = data;
-      console.log(this.blutabnahmen);
       this.cdr.detectChanges();
     });
   }

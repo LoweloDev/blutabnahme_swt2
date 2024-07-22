@@ -27,23 +27,6 @@ export class MenuComponent implements AfterViewInit {
   constructor(private breakpointObserver: BreakpointObserver, protected authService: AuthService, private readonly dialog: MatDialog, private readonly mqtt: MqttService, private readonly router: Router) {
   }
 
-  // async ngOnInit() {
-  //   await this.mqtt.subscribe("blutabnahme");
-  //
-  //   this.mqtt.getClient().handleMessage = (packet) => {
-  //     console.log("Received message:", packet.payload.toString())
-  //     this.dialog.open(GenericDetailComponent, {
-  //       data: packet.payload,
-  //     });
-  //
-  //     this.router.navigate(['/blutabnahmen']);
-  //   };
-  // }
-  //
-  // ngOnDestroy() {
-  //   this.mqtt.close();
-  // }
-
   ngAfterViewInit() {
     this.handleBreakpoints();
   }

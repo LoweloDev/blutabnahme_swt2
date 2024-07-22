@@ -55,10 +55,6 @@ export class MqttService {
     this.client.on("reconnect", () => {
       console.log("MQTT client reconnecting");
     });
-
-    this.client.on("message", (topic, message) => {
-      console.log(`Received message: ${message.toString()} on topic: ${topic}`);
-    });
   }
 
   async publish(topic: string, message: string): Promise<void> {
@@ -103,5 +99,10 @@ export class MqttService {
     } catch (error) {
       console.error("Error while waiting for MQTT connection:", error);
     }
+
+    this.getClient().handleMessage = (packet, callback) => {
+      console.log("Received message:", packet.payload.toString());
+      callback();
+    };
   }
 }

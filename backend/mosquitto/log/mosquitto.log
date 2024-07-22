@@ -714,3 +714,482 @@
 1721651316: Client mqttjs_a5270c0a disconnected.
 1721651316: Client mqttjs_d7959fb7 disconnected.
 1721651316: Client mqttjs_48fedcad disconnected.
+1721651357: New connection from 172.24.0.1:63970 on port 1883.
+1721651357: New client connected from 172.24.0.1:63970 as auto-874B1CD7-2F3D-BF12-CF8B-197F9117FE03 (p2, c1, k60).
+1721651365: New connection from 172.24.0.1:63972 on port 1883.
+1721651365: New client connected from 172.24.0.1:63972 as auto-8CEBE7FE-237C-5A3E-36F9-02DE7A9FFBCB (p2, c1, k60).
+1721651370: New connection from 172.24.0.1:63974 on port 1883.
+1721651370: New connection from 172.24.0.1:63978 on port 1883.
+1721651370: New connection from 172.24.0.1:63976 on port 1883.
+1721651370: New client connected from 172.24.0.1:63974 as mqttjs_77f9032d (p2, c1, k60).
+1721651370: New client connected from 172.24.0.1:63978 as mqttjs_6cdca4b6 (p2, c1, k60).
+1721651370: New client connected from 172.24.0.1:63976 as mqttjs_08c0075c (p2, c1, k60).
+1721651370: Client mqttjs_77f9032d disconnected.
+1721651370: Client mqttjs_6cdca4b6 disconnected.
+1721651370: Client mqttjs_08c0075c disconnected.
+1721652918: New connection from 172.24.0.1:63980 on port 1883.
+1721652918: New connection from 172.24.0.1:63984 on port 1883.
+1721652918: New connection from 172.24.0.1:63982 on port 1883.
+1721652918: New client connected from 172.24.0.1:63980 as mqttjs_ea5b757b (p2, c1, k60).
+1721652918: New client connected from 172.24.0.1:63984 as mqttjs_8095add8 (p2, c1, k60).
+1721652918: New client connected from 172.24.0.1:63982 as mqttjs_5995b1dd (p2, c1, k60).
+1721652918: Client mqttjs_ea5b757b disconnected.
+1721652918: Client mqttjs_8095add8 disconnected.
+1721652918: Client mqttjs_5995b1dd disconnected.
+1721653008: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721653227: New connection from 172.24.0.1:63986 on port 1883.
+1721653227: New connection from 172.24.0.1:63988 on port 1883.
+1721653227: New connection from 172.24.0.1:63990 on port 1883.
+1721653227: New client connected from 172.24.0.1:63986 as mqttjs_5c378660 (p2, c1, k60).
+1721653227: New client connected from 172.24.0.1:63988 as mqttjs_6286c34f (p2, c1, k60).
+1721653227: New client connected from 172.24.0.1:63990 as mqttjs_7bb90259 (p2, c1, k60).
+1721653227: Client mqttjs_6286c34f disconnected.
+1721653227: Client mqttjs_5c378660 disconnected.
+1721653227: Client mqttjs_7bb90259 disconnected.
+1721653247: New connection from 172.24.0.1:63992 on port 1883.
+1721653247: New connection from 172.24.0.1:63996 on port 1883.
+1721653247: New connection from 172.24.0.1:63994 on port 1883.
+1721653247: New client connected from 172.24.0.1:63992 as mqttjs_0fa24186 (p2, c1, k60).
+1721653247: New client connected from 172.24.0.1:63996 as mqttjs_09860722 (p2, c1, k60).
+1721653247: New client connected from 172.24.0.1:63994 as mqttjs_232e3b7f (p2, c1, k60).
+1721653247: Client mqttjs_0fa24186 disconnected.
+1721653247: Client mqttjs_232e3b7f disconnected.
+1721653247: Client mqttjs_09860722 disconnected.
+1721654243: New connection from 172.24.0.1:63998 on port 1883.
+1721654243: New connection from 172.24.0.1:64000 on port 1883.
+1721654243: New connection from 172.24.0.1:64002 on port 1883.
+1721654243: New client connected from 172.24.0.1:63998 as mqttjs_fdda3552 (p2, c1, k60).
+1721654243: New client connected from 172.24.0.1:64000 as mqttjs_45e4d53d (p2, c1, k60).
+1721654243: New client connected from 172.24.0.1:64002 as mqttjs_1ef45eab (p2, c1, k60).
+1721654243: Client mqttjs_fdda3552 disconnected.
+1721654243: Client mqttjs_45e4d53d disconnected.
+1721654243: Client mqttjs_1ef45eab disconnected.
+1721654618: New client connected from ::ffff:172.24.0.1:60436 as mqttjs_78630fce (p2, c1, k60).
+1721654657: Client mqttjs_78630fce closed its connection.
+1721654672: New client connected from ::ffff:172.24.0.1:60438 as mqttjs_dd2f3fe9 (p2, c1, k60).
+1721654707: Client mqttjs_dd2f3fe9 closed its connection.
+1721654712: New connection from 172.24.0.1:64008 on port 1883.
+1721654712: Client <unknown> disconnected due to protocol error.
+1721654713: New connection from 172.24.0.1:64010 on port 1883.
+1721654713: Client <unknown> disconnected due to protocol error.
+1721654714: New connection from 172.24.0.1:64012 on port 1883.
+1721654714: Client <unknown> disconnected due to protocol error.
+1721654715: New connection from 172.24.0.1:64014 on port 1883.
+1721654715: Client <unknown> disconnected due to protocol error.
+1721654716: New connection from 172.24.0.1:64016 on port 1883.
+1721654716: Client <unknown> disconnected due to protocol error.
+1721654717: New connection from 172.24.0.1:64018 on port 1883.
+1721654717: Client <unknown> disconnected due to protocol error.
+1721654718: New connection from 172.24.0.1:64020 on port 1883.
+1721654718: Client <unknown> disconnected due to protocol error.
+1721654719: New connection from 172.24.0.1:64022 on port 1883.
+1721654719: Client <unknown> disconnected due to protocol error.
+1721654720: New connection from 172.24.0.1:64024 on port 1883.
+1721654720: Client <unknown> disconnected due to protocol error.
+1721654721: New connection from 172.24.0.1:64026 on port 1883.
+1721654721: Client <unknown> disconnected due to protocol error.
+1721654722: New connection from 172.24.0.1:64028 on port 1883.
+1721654722: Client <unknown> disconnected due to protocol error.
+1721654723: New connection from 172.24.0.1:64030 on port 1883.
+1721654723: Client <unknown> disconnected due to protocol error.
+1721654724: New connection from 172.24.0.1:64032 on port 1883.
+1721654724: Client <unknown> disconnected due to protocol error.
+1721654725: New connection from 172.24.0.1:64034 on port 1883.
+1721654725: Client <unknown> disconnected due to protocol error.
+1721654726: New connection from 172.24.0.1:64036 on port 1883.
+1721654726: Client <unknown> disconnected due to protocol error.
+1721654728: New connection from 172.24.0.1:64038 on port 1883.
+1721654728: Client <unknown> disconnected due to protocol error.
+1721654729: New connection from 172.24.0.1:64040 on port 1883.
+1721654729: Client <unknown> disconnected due to protocol error.
+1721654730: New connection from 172.24.0.1:64042 on port 1883.
+1721654730: Client <unknown> disconnected due to protocol error.
+1721654731: New connection from 172.24.0.1:64044 on port 1883.
+1721654731: Client <unknown> disconnected due to protocol error.
+1721654732: New connection from 172.24.0.1:64046 on port 1883.
+1721654732: Client <unknown> disconnected due to protocol error.
+1721654733: New connection from 172.24.0.1:64048 on port 1883.
+1721654733: Client <unknown> disconnected due to protocol error.
+1721654734: New connection from 172.24.0.1:64050 on port 1883.
+1721654734: Client <unknown> disconnected due to protocol error.
+1721654735: New connection from 172.24.0.1:64052 on port 1883.
+1721654735: Client <unknown> disconnected due to protocol error.
+1721654736: New connection from 172.24.0.1:64054 on port 1883.
+1721654736: Client <unknown> disconnected due to protocol error.
+1721654737: New connection from 172.24.0.1:64056 on port 1883.
+1721654737: Client <unknown> disconnected due to protocol error.
+1721654738: New connection from 172.24.0.1:64058 on port 1883.
+1721654738: Client <unknown> disconnected due to protocol error.
+1721654739: New connection from 172.24.0.1:64060 on port 1883.
+1721654739: Client <unknown> disconnected due to protocol error.
+1721654740: New connection from 172.24.0.1:64062 on port 1883.
+1721654740: Client <unknown> disconnected due to protocol error.
+1721654741: New connection from 172.24.0.1:64064 on port 1883.
+1721654741: Client <unknown> disconnected due to protocol error.
+1721654742: New connection from 172.24.0.1:64066 on port 1883.
+1721654742: Client <unknown> disconnected due to protocol error.
+1721654743: New connection from 172.24.0.1:64068 on port 1883.
+1721654743: Client <unknown> disconnected due to protocol error.
+1721654744: New connection from 172.24.0.1:64070 on port 1883.
+1721654744: Client <unknown> disconnected due to protocol error.
+1721654745: New connection from 172.24.0.1:64072 on port 1883.
+1721654745: Client <unknown> disconnected due to protocol error.
+1721654746: New connection from 172.24.0.1:64074 on port 1883.
+1721654746: Client <unknown> disconnected due to protocol error.
+1721654747: New connection from 172.24.0.1:64076 on port 1883.
+1721654747: Client <unknown> disconnected due to protocol error.
+1721654748: New connection from 172.24.0.1:64078 on port 1883.
+1721654748: Client <unknown> disconnected due to protocol error.
+1721654749: New connection from 172.24.0.1:64080 on port 1883.
+1721654749: Client <unknown> disconnected due to protocol error.
+1721654750: New connection from 172.24.0.1:64082 on port 1883.
+1721654750: Client <unknown> disconnected due to protocol error.
+1721654751: New connection from 172.24.0.1:64084 on port 1883.
+1721654751: Client <unknown> disconnected due to protocol error.
+1721654752: New connection from 172.24.0.1:64086 on port 1883.
+1721654752: Client <unknown> disconnected due to protocol error.
+1721654753: New connection from 172.24.0.1:64088 on port 1883.
+1721654753: Client <unknown> disconnected due to protocol error.
+1721654754: New connection from 172.24.0.1:64090 on port 1883.
+1721654754: Client <unknown> disconnected due to protocol error.
+1721654755: New connection from 172.24.0.1:64092 on port 1883.
+1721654755: Client <unknown> disconnected due to protocol error.
+1721654756: New connection from 172.24.0.1:64094 on port 1883.
+1721654756: Client <unknown> disconnected due to protocol error.
+1721654757: New connection from 172.24.0.1:64096 on port 1883.
+1721654757: Client <unknown> disconnected due to protocol error.
+1721654758: New connection from 172.24.0.1:64098 on port 1883.
+1721654758: Client <unknown> disconnected due to protocol error.
+1721654759: New connection from 172.24.0.1:64100 on port 1883.
+1721654759: Client <unknown> disconnected due to protocol error.
+1721654760: New connection from 172.24.0.1:64102 on port 1883.
+1721654760: Client <unknown> disconnected due to protocol error.
+1721654761: New connection from 172.24.0.1:64104 on port 1883.
+1721654761: Client <unknown> disconnected due to protocol error.
+1721654762: New connection from 172.24.0.1:64106 on port 1883.
+1721654762: Client <unknown> disconnected due to protocol error.
+1721654763: New connection from 172.24.0.1:64108 on port 1883.
+1721654763: Client <unknown> disconnected due to protocol error.
+1721654764: New connection from 172.24.0.1:64110 on port 1883.
+1721654764: Client <unknown> disconnected due to protocol error.
+1721654765: New connection from 172.24.0.1:64112 on port 1883.
+1721654765: Client <unknown> disconnected due to protocol error.
+1721654766: New connection from 172.24.0.1:64114 on port 1883.
+1721654766: Client <unknown> disconnected due to protocol error.
+1721654767: New connection from 172.24.0.1:64116 on port 1883.
+1721654767: Client <unknown> disconnected due to protocol error.
+1721654768: New connection from 172.24.0.1:64118 on port 1883.
+1721654768: Client <unknown> disconnected due to protocol error.
+1721654769: New connection from 172.24.0.1:64120 on port 1883.
+1721654769: Client <unknown> disconnected due to protocol error.
+1721654770: New connection from 172.24.0.1:64122 on port 1883.
+1721654770: Client <unknown> disconnected due to protocol error.
+1721654771: New connection from 172.24.0.1:64124 on port 1883.
+1721654771: Client <unknown> disconnected due to protocol error.
+1721654772: New connection from 172.24.0.1:64126 on port 1883.
+1721654772: Client <unknown> disconnected due to protocol error.
+1721654773: New connection from 172.24.0.1:64128 on port 1883.
+1721654773: Client <unknown> disconnected due to protocol error.
+1721654774: New connection from 172.24.0.1:64130 on port 1883.
+1721654774: Client <unknown> disconnected due to protocol error.
+1721654775: New connection from 172.24.0.1:64132 on port 1883.
+1721654775: Client <unknown> disconnected due to protocol error.
+1721654776: New connection from 172.24.0.1:64134 on port 1883.
+1721654776: Client <unknown> disconnected due to protocol error.
+1721654777: New connection from 172.24.0.1:64136 on port 1883.
+1721654777: Client <unknown> disconnected due to protocol error.
+1721654778: New connection from 172.24.0.1:64138 on port 1883.
+1721654778: Client <unknown> disconnected due to protocol error.
+1721654779: New connection from 172.24.0.1:64140 on port 1883.
+1721654779: Client <unknown> disconnected due to protocol error.
+1721654780: New connection from 172.24.0.1:64142 on port 1883.
+1721654780: Client <unknown> disconnected due to protocol error.
+1721654781: New connection from 172.24.0.1:64144 on port 1883.
+1721654781: Client <unknown> disconnected due to protocol error.
+1721654782: New connection from 172.24.0.1:64146 on port 1883.
+1721654782: Client <unknown> disconnected due to protocol error.
+1721654783: New connection from 172.24.0.1:64148 on port 1883.
+1721654783: Client <unknown> disconnected due to protocol error.
+1721654784: New connection from 172.24.0.1:64150 on port 1883.
+1721654784: Client <unknown> disconnected due to protocol error.
+1721654785: New connection from 172.24.0.1:64152 on port 1883.
+1721654785: Client <unknown> disconnected due to protocol error.
+1721654786: New connection from 172.24.0.1:64154 on port 1883.
+1721654786: Client <unknown> disconnected due to protocol error.
+1721654787: New connection from 172.24.0.1:64156 on port 1883.
+1721654787: Client <unknown> disconnected due to protocol error.
+1721654788: New connection from 172.24.0.1:64158 on port 1883.
+1721654788: Client <unknown> disconnected due to protocol error.
+1721654789: New connection from 172.24.0.1:64160 on port 1883.
+1721654789: Client <unknown> disconnected due to protocol error.
+1721654790: New connection from 172.24.0.1:64162 on port 1883.
+1721654790: Client <unknown> disconnected due to protocol error.
+1721654791: New connection from 172.24.0.1:64164 on port 1883.
+1721654792: Client <unknown> disconnected due to protocol error.
+1721654793: New connection from 172.24.0.1:64166 on port 1883.
+1721654793: Client <unknown> disconnected due to protocol error.
+1721654809: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721654910: New client connected from ::ffff:172.24.0.1:60600 as mqttjs_882cebf4 (p2, c1, k60).
+1721654924: Client mqttjs_882cebf4 closed its connection.
+1721654924: New client connected from ::ffff:172.24.0.1:60602 as mqttjs_2897b7f5 (p2, c1, k60).
+1721654948: New connection from 172.24.0.1:64172 on port 1883.
+1721654948: New connection from 172.24.0.1:64174 on port 1883.
+1721654948: New connection from 172.24.0.1:64176 on port 1883.
+1721654948: New client connected from 172.24.0.1:64172 as mqttjs_d9008465 (p2, c1, k60).
+1721654948: New client connected from 172.24.0.1:64174 as mqttjs_553c7d22 (p2, c1, k60).
+1721654948: New client connected from 172.24.0.1:64176 as mqttjs_7291f712 (p2, c1, k60).
+1721654948: Client mqttjs_d9008465 disconnected.
+1721654948: Client mqttjs_553c7d22 disconnected.
+1721654948: Client mqttjs_7291f712 disconnected.
+1721655151: Client mqttjs_2897b7f5 closed its connection.
+1721655152: New client connected from ::ffff:172.24.0.1:60610 as mqttjs_b22310cb (p2, c1, k60).
+1721655165: New client connected from ::ffff:172.24.0.1:60612 as mqttjs_1f3773fc (p2, c1, k60).
+1721655189: Client mqttjs_b22310cb closed its connection.
+1721655189: Client mqttjs_1f3773fc closed its connection.
+1721655190: New client connected from ::ffff:172.24.0.1:60614 as mqttjs_71268164 (p2, c1, k60).
+1721655190: New client connected from ::ffff:172.24.0.1:60616 as mqttjs_48d6d28e (p2, c1, k60).
+1721655224: Client mqttjs_48d6d28e closed its connection.
+1721655224: Client mqttjs_71268164 closed its connection.
+1721655224: New client connected from ::ffff:172.24.0.1:60618 as mqttjs_d5da6891 (p2, c1, k60).
+1721655266: Client mqttjs_d5da6891 closed its connection.
+1721655266: New client connected from ::ffff:172.24.0.1:60620 as mqttjs_c9b6c705 (p2, c1, k60).
+1721655279: Client mqttjs_c9b6c705 closed its connection.
+1721655279: New client connected from ::ffff:172.24.0.1:60622 as mqttjs_895ce98c (p2, c1, k60).
+1721655283: Client mqttjs_895ce98c closed its connection.
+1721655283: New client connected from ::ffff:172.24.0.1:60624 as mqttjs_a75b7a38 (p2, c1, k60).
+1721655308: New connection from 172.24.0.1:64196 on port 1883.
+1721655308: New connection from 172.24.0.1:64198 on port 1883.
+1721655308: New connection from 172.24.0.1:64194 on port 1883.
+1721655308: New client connected from 172.24.0.1:64196 as mqttjs_07bb86f2 (p2, c1, k60).
+1721655308: New client connected from 172.24.0.1:64198 as mqttjs_36ac614f (p2, c1, k60).
+1721655308: New client connected from 172.24.0.1:64194 as mqttjs_e0224629 (p2, c1, k60).
+1721655308: Client mqttjs_07bb86f2 disconnected.
+1721655308: Client mqttjs_36ac614f disconnected.
+1721655308: Client mqttjs_e0224629 disconnected.
+1721655363: Client mqttjs_a75b7a38 closed its connection.
+1721655363: New client connected from ::ffff:172.24.0.1:60632 as mqttjs_48f79e94 (p2, c1, k60).
+1721655369: New connection from 172.24.0.1:64204 on port 1883.
+1721655369: New connection from 172.24.0.1:64202 on port 1883.
+1721655369: New connection from 172.24.0.1:64206 on port 1883.
+1721655369: New client connected from 172.24.0.1:64204 as mqttjs_3bd399bf (p2, c1, k60).
+1721655369: New client connected from 172.24.0.1:64202 as mqttjs_016e9f55 (p2, c1, k60).
+1721655369: New client connected from 172.24.0.1:64206 as mqttjs_f6264ca3 (p2, c1, k60).
+1721655369: Client mqttjs_3bd399bf disconnected.
+1721655369: Client mqttjs_016e9f55 disconnected.
+1721655369: Client mqttjs_f6264ca3 disconnected.
+1721655369: Client mqttjs_48f79e94 disconnected.
+1721655425: New connection from 172.24.0.1:64212 on port 1883.
+1721655425: New connection from 172.24.0.1:64216 on port 1883.
+1721655425: New connection from 172.24.0.1:64214 on port 1883.
+1721655425: New client connected from 172.24.0.1:64212 as mqttjs_71b8729b (p2, c1, k60).
+1721655425: New client connected from 172.24.0.1:64216 as mqttjs_d0f9c659 (p2, c1, k60).
+1721655425: New client connected from 172.24.0.1:64214 as mqttjs_6ae10d76 (p2, c1, k60).
+1721655425: Client mqttjs_71b8729b disconnected.
+1721655425: Client mqttjs_d0f9c659 disconnected.
+1721655425: Client mqttjs_6ae10d76 disconnected.
+1721655466: New client connected from ::ffff:172.24.0.1:60650 as mqttjs_24fcc59d (p2, c1, k60).
+1721655504: New connection from 172.24.0.1:64220 on port 1883.
+1721655504: New connection from 172.24.0.1:64222 on port 1883.
+1721655504: New connection from 172.24.0.1:64224 on port 1883.
+1721655504: New client connected from 172.24.0.1:64220 as mqttjs_f1c68f85 (p2, c1, k60).
+1721655504: New client connected from 172.24.0.1:64222 as mqttjs_d1fdf0f6 (p2, c1, k60).
+1721655504: New client connected from 172.24.0.1:64224 as mqttjs_82c5f5d0 (p2, c1, k60).
+1721655504: Client mqttjs_f1c68f85 disconnected.
+1721655504: Client mqttjs_d1fdf0f6 disconnected.
+1721655504: Client mqttjs_82c5f5d0 disconnected.
+1721655504: Client mqttjs_24fcc59d disconnected.
+1721655546: New client connected from ::ffff:172.24.0.1:60658 as mqttjs_60075991 (p2, c1, k60).
+1721655683: New connection from 172.24.0.1:64230 on port 1883.
+1721655683: New connection from 172.24.0.1:64228 on port 1883.
+1721655683: New connection from 172.24.0.1:64232 on port 1883.
+1721655683: New client connected from 172.24.0.1:64230 as mqttjs_7d9b0ef8 (p2, c1, k60).
+1721655683: New client connected from 172.24.0.1:64228 as mqttjs_dfead5e5 (p2, c1, k60).
+1721655683: New client connected from 172.24.0.1:64232 as mqttjs_4fe2d976 (p2, c1, k60).
+1721655683: Client mqttjs_7d9b0ef8 disconnected.
+1721655683: Client mqttjs_dfead5e5 disconnected.
+1721655683: Client mqttjs_4fe2d976 disconnected.
+1721655683: Client mqttjs_60075991 disconnected.
+1721655695: New connection from 172.24.0.1:64234 on port 1883.
+1721655695: New connection from 172.24.0.1:64236 on port 1883.
+1721655695: New client connected from 172.24.0.1:64234 as mqttjs_cd1f5a9f (p2, c1, k60).
+1721655695: New client connected from 172.24.0.1:64236 as mqttjs_cda78fac (p2, c1, k60).
+1721655695: New connection from 172.24.0.1:64238 on port 1883.
+1721655695: New client connected from 172.24.0.1:64238 as mqttjs_b0007a15 (p2, c1, k60).
+1721655695: Client mqttjs_cd1f5a9f disconnected.
+1721655695: Client mqttjs_cda78fac disconnected.
+1721655695: Client mqttjs_b0007a15 disconnected.
+1721655699: New connection from 172.24.0.1:64242 on port 1883.
+1721655699: New connection from 172.24.0.1:64240 on port 1883.
+1721655699: New connection from 172.24.0.1:64244 on port 1883.
+1721655699: New client connected from 172.24.0.1:64242 as mqttjs_a8fee204 (p2, c1, k60).
+1721655699: New client connected from 172.24.0.1:64240 as mqttjs_fc6619e6 (p2, c1, k60).
+1721655699: New client connected from 172.24.0.1:64244 as mqttjs_1f976979 (p2, c1, k60).
+1721655699: Client mqttjs_a8fee204 disconnected.
+1721655699: Client mqttjs_fc6619e6 disconnected.
+1721655699: Client mqttjs_1f976979 disconnected.
+1721655707: New connection from 172.24.0.1:64246 on port 1883.
+1721655707: New connection from 172.24.0.1:64248 on port 1883.
+1721655707: New connection from 172.24.0.1:64250 on port 1883.
+1721655707: New client connected from 172.24.0.1:64246 as mqttjs_c865e93c (p2, c1, k60).
+1721655707: New client connected from 172.24.0.1:64248 as mqttjs_7e31d03e (p2, c1, k60).
+1721655707: New client connected from 172.24.0.1:64250 as mqttjs_5ecf7e76 (p2, c1, k60).
+1721655707: Client mqttjs_c865e93c disconnected.
+1721655707: Client mqttjs_7e31d03e disconnected.
+1721655707: Client mqttjs_5ecf7e76 disconnected.
+1721655716: New connection from 172.24.0.1:64252 on port 1883.
+1721655716: New connection from 172.24.0.1:64254 on port 1883.
+1721655716: New connection from 172.24.0.1:64256 on port 1883.
+1721655716: New client connected from 172.24.0.1:64252 as mqttjs_8af542af (p2, c1, k60).
+1721655716: New client connected from 172.24.0.1:64254 as mqttjs_8b2e4d1b (p2, c1, k60).
+1721655716: New client connected from 172.24.0.1:64256 as mqttjs_f3cbd658 (p2, c1, k60).
+1721655716: Client mqttjs_8af542af disconnected.
+1721655716: Client mqttjs_8b2e4d1b disconnected.
+1721655716: Client mqttjs_f3cbd658 disconnected.
+1721655743: New client connected from ::ffff:172.24.0.1:60690 as mqttjs_4dbc751f (p2, c1, k60).
+1721655750: New connection from 172.24.0.1:64260 on port 1883.
+1721655750: New connection from 172.24.0.1:64262 on port 1883.
+1721655750: New connection from 172.24.0.1:64264 on port 1883.
+1721655750: New client connected from 172.24.0.1:64260 as mqttjs_712a4883 (p2, c1, k60).
+1721655750: New client connected from 172.24.0.1:64262 as mqttjs_8546dbff (p2, c1, k60).
+1721655750: New client connected from 172.24.0.1:64264 as mqttjs_737871de (p2, c1, k60).
+1721655750: Client mqttjs_712a4883 disconnected.
+1721655750: Client mqttjs_8546dbff disconnected.
+1721655750: Client mqttjs_737871de disconnected.
+1721655750: Client mqttjs_4dbc751f disconnected.
+1721655872: New client connected from ::ffff:172.24.0.1:60698 as mqttjs_18e58235 (p2, c1, k60).
+1721655876: Client mqttjs_18e58235 disconnected.
+1721656610: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721658411: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721660212: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721662013: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721663814: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721665459: New client connected from ::ffff:172.24.0.1:60700 as mqttjs_9352bf36 (p2, c1, k60).
+1721665472: New connection from 172.24.0.1:64270 on port 1883.
+1721665472: New connection from 172.24.0.1:64272 on port 1883.
+1721665472: New connection from 172.24.0.1:64274 on port 1883.
+1721665472: New client connected from 172.24.0.1:64270 as mqttjs_0be4da4b (p2, c1, k60).
+1721665472: New client connected from 172.24.0.1:64272 as mqttjs_0e1a57eb (p2, c1, k60).
+1721665472: New client connected from 172.24.0.1:64274 as mqttjs_51dc703c (p2, c1, k60).
+1721665472: Client mqttjs_0be4da4b disconnected.
+1721665472: Client mqttjs_0e1a57eb disconnected.
+1721665472: Client mqttjs_51dc703c disconnected.
+1721665549: Client mqttjs_9352bf36 closed its connection.
+1721665550: New client connected from ::ffff:172.24.0.1:60708 as mqttjs_9352bf36 (p2, c1, k60).
+1721665615: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721667416: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721668513: Client mqttjs_9352bf36 closed its connection.
+1721668517: New client connected from ::ffff:172.24.0.1:60710 as mqttjs_d3b99709 (p2, c1, k60).
+1721668535: New connection from 172.24.0.1:64286 on port 1883.
+1721668535: New connection from 172.24.0.1:64282 on port 1883.
+1721668535: New connection from 172.24.0.1:64280 on port 1883.
+1721668535: New client connected from 172.24.0.1:64286 as mqttjs_e4cbdd97 (p2, c1, k60).
+1721668535: New client connected from 172.24.0.1:64282 as mqttjs_24061541 (p2, c1, k60).
+1721668535: New client connected from 172.24.0.1:64280 as mqttjs_4b8bef96 (p2, c1, k60).
+1721668535: Client mqttjs_e4cbdd97 disconnected.
+1721668535: Client mqttjs_24061541 disconnected.
+1721668535: Client mqttjs_4b8bef96 disconnected.
+1721668535: Client mqttjs_d3b99709 disconnected.
+1721668664: New client connected from ::ffff:172.24.0.1:60720 as mqttjs_53e3c97b (p2, c1, k60).
+1721668669: New connection from 172.24.0.1:64290 on port 1883.
+1721668669: New connection from 172.24.0.1:64294 on port 1883.
+1721668669: New connection from 172.24.0.1:64292 on port 1883.
+1721668669: New client connected from 172.24.0.1:64290 as mqttjs_1128766f (p2, c1, k60).
+1721668669: New client connected from 172.24.0.1:64294 as mqttjs_b7041ef7 (p2, c1, k60).
+1721668669: New client connected from 172.24.0.1:64292 as mqttjs_35191ce4 (p2, c1, k60).
+1721668669: Client mqttjs_1128766f disconnected.
+1721668669: Client mqttjs_b7041ef7 disconnected.
+1721668669: Client mqttjs_35191ce4 disconnected.
+1721668754: Client mqttjs_53e3c97b closed its connection.
+1721668756: New client connected from ::ffff:172.24.0.1:60728 as mqttjs_53e3c97b (p2, c1, k60).
+1721668771: Client mqttjs_53e3c97b closed its connection.
+1721668771: New client connected from ::ffff:172.24.0.1:60730 as mqttjs_5dd1a283 (p2, c1, k60).
+1721669217: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721671018: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721671365: Client mqttjs_5dd1a283 closed its connection.
+1721671366: New client connected from ::ffff:172.24.0.1:60732 as mqttjs_aee081c1 (p2, c1, k60).
+1721672034: Client mqttjs_aee081c1 disconnected.
+1721672404: New client connected from ::ffff:172.24.0.1:60734 as mqttjs_292508f9 (p2, c1, k60).
+1721672420: Client mqttjs_292508f9 disconnected.
+1721672442: New client connected from ::ffff:172.24.0.1:60736 as mqttjs_7c69df81 (p2, c1, k60).
+1721672453: Client mqttjs_7c69df81 disconnected.
+1721672495: New client connected from ::ffff:172.24.0.1:60738 as mqttjs_a8b5d36e (p2, c1, k60).
+1721672506: Client mqttjs_a8b5d36e disconnected.
+1721672538: New client connected from ::ffff:172.24.0.1:60740 as mqttjs_71385cb4 (p2, c1, k60).
+1721672542: Client mqttjs_71385cb4 disconnected.
+1721672673: New client connected from ::ffff:172.24.0.1:60742 as mqttjs_a21154da (p2, c1, k60).
+1721672744: Client mqttjs_a21154da closed its connection.
+1721672744: New client connected from ::ffff:172.24.0.1:60744 as mqttjs_45717aa3 (p2, c1, k60).
+1721672751: Client mqttjs_45717aa3 disconnected.
+1721672819: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721672969: New client connected from ::ffff:172.24.0.1:60746 as mqttjs_e2e82d98 (p2, c1, k60).
+1721672975: Client mqttjs_e2e82d98 disconnected.
+1721673000: New client connected from ::ffff:172.24.0.1:60748 as mqttjs_84d46ced (p2, c1, k60).
+1721673004: Client mqttjs_84d46ced disconnected.
+1721674060: New client connected from ::ffff:172.24.0.1:60750 as mqttjs_6c9440ff (p2, c1, k60).
+1721674068: Client mqttjs_6c9440ff disconnected.
+1721674150: New client connected from ::ffff:172.24.0.1:60752 as mqttjs_54ab57f8 (p2, c1, k60).
+1721674157: Client mqttjs_54ab57f8 disconnected.
+1721674320: New client connected from ::ffff:172.24.0.1:60754 as mqttjs_ab8d0e04 (p2, c1, k60).
+1721674342: Client mqttjs_ab8d0e04 closed its connection.
+1721674343: New client connected from ::ffff:172.24.0.1:60756 as mqttjs_e94deb5e (p2, c1, k60).
+1721674349: Client mqttjs_e94deb5e disconnected.
+1721674377: New client connected from ::ffff:172.24.0.1:60758 as mqttjs_50699c4c (p2, c1, k60).
+1721674381: Client mqttjs_50699c4c disconnected.
+1721674436: New client connected from ::ffff:172.24.0.1:60760 as mqttjs_56029249 (p2, c1, k60).
+1721674441: Client mqttjs_56029249 disconnected.
+1721674488: New client connected from ::ffff:172.24.0.1:60762 as mqttjs_e30359bc (p2, c1, k60).
+1721674499: Client mqttjs_e30359bc disconnected.
+1721674545: New client connected from ::ffff:172.24.0.1:60764 as mqttjs_d4893bc3 (p2, c1, k60).
+1721674549: Client mqttjs_d4893bc3 disconnected.
+1721674620: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721675084: New client connected from ::ffff:172.24.0.1:60766 as mqttjs_636da64a (p2, c1, k60).
+1721675092: Client mqttjs_636da64a disconnected.
+1721675408: New client connected from ::ffff:172.24.0.1:60768 as mqttjs_e99a21fc (p2, c1, k60).
+1721675837: Client mqttjs_e99a21fc closed its connection.
+1721675838: New client connected from ::ffff:172.24.0.1:60770 as mqttjs_c4f14929 (p2, c1, k60).
+1721675853: Client mqttjs_c4f14929 disconnected.
+1721675947: New client connected from ::ffff:172.24.0.1:60772 as mqttjs_c6978ad7 (p2, c1, k60).
+1721675956: Client mqttjs_c6978ad7 disconnected.
+1721676113: New client connected from ::ffff:172.24.0.1:60774 as mqttjs_7147bc47 (p2, c1, k60).
+1721676122: Client mqttjs_7147bc47 disconnected.
+1721676325: New client connected from ::ffff:172.24.0.1:60776 as mqttjs_11ae9436 (p2, c1, k60).
+1721676338: Client mqttjs_11ae9436 closed its connection.
+1721676339: New client connected from ::ffff:172.24.0.1:60778 as mqttjs_457db8a2 (p2, c1, k60).
+1721676345: Client mqttjs_457db8a2 disconnected.
+1721676421: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721676437: New client connected from ::ffff:172.24.0.1:60780 as mqttjs_048e775f (p2, c1, k60).
+1721676442: Client mqttjs_048e775f disconnected.
+1721676476: New client connected from ::ffff:172.24.0.1:60782 as mqttjs_f6845a27 (p2, c1, k60).
+1721676480: Client mqttjs_f6845a27 disconnected.
+1721676521: New client connected from ::ffff:172.24.0.1:60784 as mqttjs_ff301a70 (p2, c1, k60).
+1721676527: Client mqttjs_ff301a70 disconnected.
+1721676737: New client connected from ::ffff:172.24.0.1:60786 as mqttjs_ba0eb88e (p2, c1, k60).
+1721676744: Client mqttjs_ba0eb88e disconnected.
+1721676782: New client connected from ::ffff:172.24.0.1:60788 as mqttjs_81b10bf1 (p2, c1, k60).
+1721676866: Client mqttjs_81b10bf1 closed its connection.
+1721676867: New client connected from ::ffff:172.24.0.1:60790 as mqttjs_e57872fb (p2, c1, k60).
+1721676873: Client mqttjs_e57872fb disconnected.
+1721677225: New client connected from ::ffff:172.24.0.1:60792 as mqttjs_c2d06aa7 (p2, c1, k60).
+1721677241: Client mqttjs_c2d06aa7 closed its connection.
+1721677242: New client connected from ::ffff:172.24.0.1:60794 as mqttjs_4763452d (p2, c1, k60).
+1721677280: Client mqttjs_4763452d closed its connection.
+1721677281: New client connected from ::ffff:172.24.0.1:60796 as mqttjs_16bd3941 (p2, c1, k60).
+1721677322: Client mqttjs_16bd3941 closed its connection.
+1721677322: New client connected from ::ffff:172.24.0.1:60798 as mqttjs_bf6e7631 (p2, c1, k60).
+1721677352: Client mqttjs_bf6e7631 disconnected.
+1721677433: New client connected from ::ffff:172.24.0.1:60800 as mqttjs_f808cea9 (p2, c1, k60).
+1721677660: New connection from 172.24.0.1:64372 on port 1883.
+1721677660: New connection from 172.24.0.1:64370 on port 1883.
+1721677660: New connection from 172.24.0.1:64376 on port 1883.
+1721677660: New client connected from 172.24.0.1:64372 as mqttjs_65054ba7 (p2, c1, k60).
+1721677660: New client connected from 172.24.0.1:64370 as mqttjs_45345858 (p2, c1, k60).
+1721677660: New client connected from 172.24.0.1:64376 as mqttjs_17fcdc5d (p2, c1, k60).
+1721677660: Client mqttjs_45345858 disconnected.
+1721677660: Client mqttjs_65054ba7 disconnected.
+1721677660: Client mqttjs_17fcdc5d disconnected.
+1721677735: Client mqttjs_f808cea9 closed its connection.
+1721677736: New client connected from ::ffff:172.24.0.1:60810 as mqttjs_f808cea9 (p2, c1, k60).
+1721677861: Client mqttjs_f808cea9 closed its connection.
+1721677862: New client connected from ::ffff:172.24.0.1:60812 as mqttjs_dca78cb1 (p2, c1, k60).
+1721677962: Client mqttjs_dca78cb1 closed its connection.
+1721677963: New client connected from ::ffff:172.24.0.1:60814 as mqttjs_21ea100b (p2, c1, k60).

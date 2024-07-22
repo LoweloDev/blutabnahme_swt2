@@ -19,9 +19,7 @@ import {catchError, of, take} from "rxjs";
 import {MatIcon} from "@angular/material/icon";
 import {ContentWrapperComponent} from "../../components/content-wrapper/content-wrapper.component";
 
-// TODO fix Proben Duplikate anzeige
 // TODO NFC & external scan
-// FIXME Popup Messages
 
 @Component({
   selector: 'app-blutabnahme',
@@ -73,7 +71,6 @@ export class BlutabnahmeComponent implements OnInit {
   }
 
   scanCallback = (result: any, key: string) => {
-    console.log(result, key)
     if (result) {
       this.scanData[key] = result[key];
       this.currentStep++;
@@ -141,7 +138,6 @@ export class BlutabnahmeComponent implements OnInit {
   }
 
   showSummary(blutabnahmeMap: any) {
-    // next step
     this.blutabnahme = blutabnahmeMap;
     this.currentStep++;
     this.stepper?.next();

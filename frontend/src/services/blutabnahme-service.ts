@@ -24,8 +24,6 @@ constructor(private http: HttpClient) {}
   }
 
   createBatch(blutabnahmen: Blutabnahme[]): Observable<Blutabnahme[]> {
-  const x = this.http.get<Blutabnahme[]>(`${environment.apiUrl}/blutabnahme/`);
-  x.subscribe( i => console.log(i))
     return this.http.post<Blutabnahme[]>(`${environment.apiUrl}/blutabnahme/batch`, blutabnahmen);
   }
 

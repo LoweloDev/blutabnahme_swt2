@@ -30,15 +30,9 @@ export class AppComponent {
     await this.mqtt.subscribe("blutabnahme");
 
     this.mqtt.getClient().handleMessage = (packet) => {
-      console.log("Received message:", packet.payload.toString());
-
       this.snackBar.open("Jemand hat eine Blutabnahme erstellt", 'Close', {
         duration: 3000,
       });
     };
-  }
-
-  ngOnDestroy() {
-    this.mqtt.close();
   }
 }

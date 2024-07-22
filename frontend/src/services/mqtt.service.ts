@@ -36,17 +36,16 @@ export class MqttService {
 
     this.client = mqtt.connect(this.brokerUrl, {
       protocol: 'ws',
-      // Add any necessary options here, such as username, password, etc.
     });
 
     this.client.on("connect", () => {
       console.log("Connected to MQTT broker");
-      this.connectionResolve(); // Resolve the connection promise
+      this.connectionResolve();
     });
 
     this.client.on("error", (error) => {
       console.error("MQTT error:", error);
-      this.connectionReject(error); // Reject the connection promise
+      this.connectionReject(error);
     });
 
     this.client.on("close", () => {
@@ -64,7 +63,7 @@ export class MqttService {
 
   async publish(topic: string, message: string): Promise<void> {
     try {
-      await this.connectionPromise; // Wait for connection to be established
+      await this.connectionPromise;
       if (this.client && this.client.connected) {
         console.log(`Publishing message to topic ${topic}: ${message}`);
         this.client.publish(topic, message, (error) => {
@@ -82,7 +81,7 @@ export class MqttService {
 
   async subscribe(topic: string): Promise<void> {
     try {
-      await this.connectionPromise; // Wait for connection to be established
+      await this.connectionPromise;
       if (this.client && this.client.connected) {
         console.log(`Subscribing to topic ${topic}`);
 

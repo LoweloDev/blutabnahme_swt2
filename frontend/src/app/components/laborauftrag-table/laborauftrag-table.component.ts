@@ -73,7 +73,6 @@ export class LaborauftragTableComponent implements OnInit {
     }
   }
 
-  // shfit markieren
   handleRowClick(event: MouseEvent, row: Laborauftrag): void {
     if (event.shiftKey) {
       const lastSelected = Array.from(this.selection).pop();
