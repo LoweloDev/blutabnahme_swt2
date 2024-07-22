@@ -1,16 +1,17 @@
-import { Injectable, OnModuleInit, OnModuleDestroy } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import * as mqtt from "mqtt";
 
 @Injectable()
-export class MqttService implements OnModuleInit, OnModuleDestroy {
+export class MqttService {
   private client: mqtt.MqttClient;
 
-  onModuleInit() {
+  // need to use constructor cause lifecylce methods dont work when DI doesnt work
+  constructor() {
     console.log("MqttService initializing...");
     this.connectToBroker();
   }
 
-  onModuleDestroy() {
+  close() {
     if (this.client) {
       console.log("MqttService destroying...");
       this.client.end();

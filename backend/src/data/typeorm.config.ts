@@ -1,4 +1,6 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
+import { BlutabnahmeSubscriber } from "../modules/blutabnahme/blutabnahme.subscriber";
+import { ProbeSubscriber } from "../modules/probe/probe.subscriber";
 
 export class DbConfig {
   public static DOCKER: TypeOrmModuleOptions = {
@@ -13,9 +15,9 @@ export class DbConfig {
     dropSchema: true,
     migrations: [__dirname + "/../../migrations/sqlite/*.{ts,js}"],
     entities: [__dirname + "/../../**/*.entity.{ts,js}"],
-    subscribers: [],
+    subscribers: [BlutabnahmeSubscriber, ProbeSubscriber],
     synchronize: true,
-    logging: true,
+    logging: false,
   };
 
   public static MEMORY: TypeOrmModuleOptions = {
@@ -24,8 +26,8 @@ export class DbConfig {
     dropSchema: true,
     migrations: [__dirname + "/../../migrations/sqlite/*.{ts,js}"],
     entities: [__dirname + "/../../**/*.entity.{ts,js}"],
-    subscribers: [],
+    subscribers: [BlutabnahmeSubscriber, ProbeSubscriber],
     synchronize: true,
-    logging: true,
+    logging: false,
   };
 }

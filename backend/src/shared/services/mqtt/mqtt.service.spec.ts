@@ -17,13 +17,12 @@ describe("MqttService", () => {
   });
 
   test("publish and subscribe", () => {
-    service.onModuleInit();
     const topic = "test";
     const message = "test";
     service.publish(topic, message);
     service.subscribe("test");
     service.publish(topic, message);
 
-    service.onModuleDestroy();
+    service.close();
   });
 });
