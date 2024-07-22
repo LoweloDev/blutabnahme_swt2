@@ -4,6 +4,7 @@ import {BlutabnahmeComponent} from "./pages/blutabnahme/blutabnahme.component";
 import {LaborauftraegeComponent} from "./pages/laborauftraege/laborauftraege.component";
 import {BlutabnahmenComponent} from "./pages/blutabnahmen/blutabnahmen.component";
 import {LoginComponent} from "./components/login/login.component";
+import {GenericDetailComponent} from "./components/generic-detail/generic-detail.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to login
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'blutabnahme', component: BlutabnahmeComponent },
   { path: 'laborauftraege', component: LaborauftraegeComponent },
   { path: 'blutabnahmen', component: BlutabnahmenComponent },
+  { path: 'detail/:id', component: GenericDetailComponent },
   { path: '**', redirectTo: '/login' }, // Redirect unknown routes to login
 ];

@@ -5,6 +5,7 @@ import {Laborauftrag} from "../../../models/laborauftrag";
 import {LaborauftragService} from "../../../services/laborauftrag-service";
 import {Blutabnahme} from "../../../models/blutabnahme";
 import {BlutabnahmeService} from "../../../services/blutabnahme-service";
+import {StateService} from "../../../services/state-service";
 
 @Component({
   selector: 'app-blutabnahmen',
@@ -19,13 +20,14 @@ import {BlutabnahmeService} from "../../../services/blutabnahme-service";
 export class BlutabnahmenComponent implements OnInit {
   protected blutabnahmen: Blutabnahme[] = [];
 
-  constructor(private service: BlutabnahmeService, private cdr: ChangeDetectorRef) {}
+  constructor(private service: BlutabnahmeService, private cdr: ChangeDetectorRef, private stateService: StateService) {}
 
   ngOnInit() {
-    this.service.getBlutabnahmen().subscribe((data) => {
+    this.stateService.genericComponentServiceMap.set('blutabnahmen', this.service);
+    this.service.getAll().subscribe((data) => {
       this.blutabnahmen = data;
       console.log(this.blutabnahmen);
-      this.cdr.detectChanges(); // Manually trigger change detection
+      this.cdr.detectChanges();
     });
   }
 }

@@ -11,29 +11,29 @@ import {environment} from "../environments/environment";
 export class BlutabnahmeService {
 constructor(private http: HttpClient) {}
 
-  getBlutabnahmen(): Observable<Blutabnahme[]> {
+  getAll(): Observable<Blutabnahme[]> {
     return this.http.get<Blutabnahme[]>(`${environment.apiUrl}/blutabnahme`);
   }
 
-  getBlutabnahme(id: string): Observable<Blutabnahme> {
+  get(id: string): Observable<Blutabnahme> {
     return this.http.get<Blutabnahme>(`${environment.apiUrl}/blutabnahme/${id}`);
   }
 
-  createBlutabnahme(blutabnahme: Blutabnahme): Observable<Blutabnahme> {
+  create(blutabnahme: Blutabnahme): Observable<Blutabnahme> {
     return this.http.post<Blutabnahme>(`${environment.apiUrl}/blutabnahme`, blutabnahme);
   }
 
-  createBatchBlutabnahme(blutabnahmen: Blutabnahme[]): Observable<Blutabnahme[]> {
+  createBatch(blutabnahmen: Blutabnahme[]): Observable<Blutabnahme[]> {
   const x = this.http.get<Blutabnahme[]>(`${environment.apiUrl}/blutabnahme/`);
   x.subscribe( i => console.log(i))
     return this.http.post<Blutabnahme[]>(`${environment.apiUrl}/blutabnahme/batch`, blutabnahmen);
   }
 
-  updateBlutabnahme(id: string, blutabnahme: Blutabnahme): Observable<Blutabnahme> {
+  update(id: string, blutabnahme: Blutabnahme): Observable<Blutabnahme> {
     return this.http.put<Blutabnahme>(`${environment.apiUrl}/blutabnahme/${id}`, blutabnahme);
   }
 
-  deleteBlutabnahme(id: string): Observable<Blutabnahme> {
+  delete(id: string): Observable<Blutabnahme> {
     return this.http.delete<Blutabnahme>(`${environment.apiUrl}/blutabnahme/${id}`);
   }
 }

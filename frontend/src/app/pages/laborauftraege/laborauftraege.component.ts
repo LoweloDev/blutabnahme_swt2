@@ -20,7 +20,7 @@ export class LaborauftraegeComponent implements OnInit {
   constructor(private service: LaborauftragService) {
   }
   ngOnInit() {
-    this.service.getLaborauftraege().subscribe((data) => {
+    this.service.getAll().subscribe((data) => {
       this.laborauftrage = data;
     });
   }

@@ -116,7 +116,7 @@ export class BlutabnahmeComponent implements OnInit {
   }
   async submitData() {
     this.submitting = true;
-      this.blutAbnahmeService.createBatchBlutabnahme(Array.from(this.blutabnahme.values())).pipe(
+      this.blutAbnahmeService.createBatch(Array.from(this.blutabnahme.values())).pipe(
         catchError((error) => {
           console.error(error);
           this.popupService.showError(

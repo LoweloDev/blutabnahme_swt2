@@ -11,6 +11,8 @@ import {
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {NgForOf} from "@angular/common";
+import {Router} from "@angular/router";
+import {GenericEntity} from "../../../models/generic-entity";
 
 @Component({
   selector: 'app-generic-table',
@@ -34,13 +36,16 @@ import {NgForOf} from "@angular/common";
   templateUrl: './generic-table.component.html',
   styleUrl: './generic-table.component.css'
 })
-export class GenericTableComponent<T extends object> implements OnInit, OnChanges {
+export class GenericTableComponent<T extends GenericEntity> implements OnInit, OnChanges {
   @Input() dataSource: T[] = [];
   displayedColumns: string[] = [];
   tableDataSource = new MatTableDataSource<T>();
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
+
+  constructor(private readonly router: Router) {
+  }
 
   ngOnInit(): void {
     this.initializeTable();
@@ -50,6 +55,10 @@ export class GenericTableComponent<T extends object> implements OnInit, OnChange
     if (changes['dataSource']) {
       this.initializeTable();
     }
+  }
+
+  async onRowClicked(row: T) {
+    await this.router.navigate([`/detail/${row['id']}`]);
   }
 
   private initializeTable(): void {

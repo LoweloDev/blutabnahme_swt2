@@ -1,5 +1,7 @@
-export class Laborauftrag {
-    id: string;
+import {GenericEntity} from "./generic-entity";
+
+export class Laborauftrag extends GenericEntity{
+    override id: string;
     patient_id: string;
     mitarbeiter_id: string;
     laborId: string;
@@ -8,7 +10,8 @@ export class Laborauftrag {
     description?: string;
 
     constructor(id: string, patientId: string, mitarbeiter_id: string, laborId: string, datum: Date, status: string, description?: string) {
-        this.id = id;
+      super();
+      this.id = id;
         this.patient_id = patientId;
         this.mitarbeiter_id = mitarbeiter_id;
         this.laborId = laborId;

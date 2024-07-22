@@ -1,0 +1,11 @@
+<mat-card *ngIf="dataSource | async as genericDataset">
+  <mat-card-header>
+    <mat-card-title>Detail View</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngFor="let item of genericDataset | keyvalue">
+      <div><strong>{{item.key}}:</strong> {{item.value}}</div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+

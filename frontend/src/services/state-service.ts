@@ -13,4 +13,5 @@ export class StateService {
   }
 
   public blutabnahmeSubject = new Subject<Map<Laborauftrag, Blutabnahme>>();
+  public genericComponentServiceMap = new Map<string, any>();
 }
