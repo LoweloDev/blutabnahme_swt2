@@ -16,12 +16,12 @@ describe("MqttService", () => {
     expect(service).toBeDefined();
   });
 
-  test("publish and subscribe", () => {
+  test("publish and subscribe", async () => {
     const topic = "test";
     const message = "test";
-    service.publish(topic, message);
-    service.subscribe("test");
-    service.publish(topic, message);
+    await service.publish(topic, message);
+    await service.subscribe("test");
+    await service.publish(topic, message);
 
     service.close();
   });
