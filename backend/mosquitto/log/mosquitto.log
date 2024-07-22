@@ -705,3 +705,12 @@
 1721651166: Client mqttjs_830cbaae disconnected.
 1721651172: Client auto-7A4D148E-FDC5-6687-7DA6-BB4EDCF38202 disconnected.
 1721651207: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721651316: New connection from 172.24.0.1:63962 on port 1883.
+1721651316: New connection from 172.24.0.1:63964 on port 1883.
+1721651316: New connection from 172.24.0.1:63968 on port 1883.
+1721651316: New client connected from 172.24.0.1:63962 as mqttjs_a5270c0a (p2, c1, k60).
+1721651316: New client connected from 172.24.0.1:63964 as mqttjs_48fedcad (p2, c1, k60).
+1721651316: New client connected from 172.24.0.1:63968 as mqttjs_d7959fb7 (p2, c1, k60).
+1721651316: Client mqttjs_a5270c0a disconnected.
+1721651316: Client mqttjs_d7959fb7 disconnected.
+1721651316: Client mqttjs_48fedcad disconnected.
