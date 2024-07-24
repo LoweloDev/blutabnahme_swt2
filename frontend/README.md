@@ -14,13 +14,26 @@ Installieren Sie die Software wie folgt:
 
 ## NVM, NODEJS, NPM
 Installieren Sie NVM:
-1. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
-2. `source ~/.bashrc`
-3. `nvm --version` um die Version zu überprüfen sodass sie sicher sind, dass NVM installiert wurde.
+### Windows:
+1. https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows#install-nvm-windows-nodejs-and-npm
+2. `nvm --version` um die Version zu überprüfen sodass sie sicher sind, dass NVM installiert wurde.
+
+### Mac:
+1. Homebrew installieren
+2. Terminal öffnen
+3. `brew install nvm`
+4. `nvm --version` um die Version zu überprüfen sodass sie sicher sind, dass NVM install
+
+### Linux:
+1. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+   oder
+2. `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+3. `source ~/.bashrc`
+4. `nvm --version` um die Version zu überprüfen sodass sie sicher sind, dass NVM install
 
 Installieren sie Node.js
 1. `nvm install node 20`
-2. `nvm use`
+2. `nvm use node 20`
 3. `node --version` um die Version zu überprüfen sodass sie sicher sind, dass Node.js installiert wurde.
 4. `npm --version` um die Version zu überprüfen sodass sie sicher sind, dass npm installiert wurde.
 
@@ -48,8 +61,9 @@ Installieren sie Docker:
 
 # Backend
 1. in den Ordner `backend` wechseln:
-2. `npm install` um die benötigten Pakete zu installieren.
-3. `docker-compose up --build` um die Anwendung zu starten.
+2. `cd backend`
+3. `npm install` um die benötigten Pakete zu installieren.
+4. `docker-compose up --build` um die Anwendung zu starten.
 
 # Testen - WICHTIG: Sie MÜSSEN, weil das Projekt neu gebuildet wurde, die Datenbank mit den Testdaten befüllen dazu habe ich Ihnen eine Postman Collection bereitgestellt, um die Daten einzufügen:
 Postman installation: https://www.postman.com/downloads/
