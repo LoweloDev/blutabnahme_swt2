@@ -13,6 +13,6 @@ export const routes: Routes = [
   { path: 'blutabnahme', component: BlutabnahmeComponent },
   { path: 'laborauftraege', component: LaborauftraegeComponent },
   { path: 'blutabnahmen', component: BlutabnahmenComponent },
-  { path: 'detail/:id', component: GenericDetailComponent },
+  { path: 'detail/:type/:id', component: GenericDetailComponent },
   { path: '**', redirectTo: '/login' }, // Redirect unknown routes to login
 ];

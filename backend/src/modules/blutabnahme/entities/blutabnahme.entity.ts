@@ -24,6 +24,10 @@ export class Blutabnahme {
   @MockValue()
   patient_id?: string;
 
+  @Column({ nullable: true })
+  @MockValue()
+  type?: string;
+
   @Column({ type: "date", nullable: true })
   @MockValue()
   timestamp?: Date;

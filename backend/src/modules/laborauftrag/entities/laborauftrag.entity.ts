@@ -20,6 +20,10 @@ export class Laborauftrag {
   @MockValue()
   laborId: string;
 
+  @Column({ nullable: true })
+  @MockValue()
+  type?: string;
+
   @Column({ type: "date" })
   @MockValue()
   datum: Date;

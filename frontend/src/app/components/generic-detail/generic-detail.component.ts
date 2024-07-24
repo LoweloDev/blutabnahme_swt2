@@ -29,7 +29,7 @@ export class GenericDetailComponent {
 
   constructor(private readonly route: ActivatedRoute, private readonly stateService: StateService) {}
   ngOnInit(): void {
-    const service = this.stateService.genericComponentServiceMap.get('blutabnahmen');
+    const service = this.stateService.genericComponentServiceMap.get(this.route.snapshot.params['type']);
     this.dataSource = service.get(this.route.snapshot.params['id']);
   }
 

@@ -20,6 +20,10 @@ export class Probe {
   @MockValue()
   timestamp?: Date;
 
+  @Column({ nullable: true })
+  @MockValue()
+  type?: string;
+
   @ManyToOne(() => Blutabnahme, (blutabnahme) => blutabnahme.proben, {
     onDelete: "CASCADE",
   })

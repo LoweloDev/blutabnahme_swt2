@@ -23,7 +23,7 @@ export class BlutabnahmenComponent implements OnInit {
   constructor(private service: BlutabnahmeService, private cdr: ChangeDetectorRef, private stateService: StateService) {}
 
   ngOnInit() {
-    this.stateService.genericComponentServiceMap.set('blutabnahmen', this.service);
+    this.stateService.genericComponentServiceMap.set('blutabnahme', this.service);
     this.service.getAll().subscribe((data) => {
       this.blutabnahmen = data;
       this.cdr.detectChanges();
