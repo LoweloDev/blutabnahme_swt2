@@ -62,9 +62,9 @@ export class LaborauftragSelectedComponent {
         proben: [],
       };
       const materialart = laborauftrag?.id.slice(-4);
-      this.probe.push({ laborauftrag_id: laborauftrag.id, id: result[key], material: materialart, timestamp: new Date()});
-      this.probeMap.set(laborauftrag.id, this.probe);
-      blutabnahme.proben = this.probe;
+      // this.probe.push({ laborauftrag_id: laborauftrag.id, id: result[key], material: materialart, timestamp: new Date()});
+      this.probeMap.set(laborauftrag.id, [...this.probeMap.get(laborauftrag.id) || [], { laborauftrag_id: laborauftrag.id, id: result[key], material: materialart, timestamp: new Date()}]);
+      blutabnahme.proben = this.probeMap.get(laborauftrag.id) || [];
       this.blutabnahme.set(laborauftrag, blutabnahme);
       } else {
       this.popupService.showError(
