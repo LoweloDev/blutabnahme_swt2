@@ -46,3 +46,26 @@ Installieren sie Docker:
 1. in den Ordner `backend` wechseln:
 2. `npm install` um die benötigten Pakete zu installieren.
 3. `docker-compose up --build` um die Anwendung zu starten.
+
+# Testen - WICHTIG: Sie MÜSSEN, weil das Projekt neu gebuildet wurde, die Datenbank mit den Testdaten befüllen dazu habe ich Ihnen eine Postman Collection bereitgestellt, um die Daten einzufügen:
+Postman installation: https://www.postman.com/downloads/
+Die Postman Collection finden Sie im Abgabeordner.
+
+1. Postman öffnen
+2. Collection importieren
+3. POST auf Laboraufträge ausführen, der Request heißt "BATCH Laborauftrag".
+
+## QR Codes
+Die QR Codes zum testen der Anwendung finden Sie ebenfalls im Abgabeordner. Die QR Codes sind entsprechend benannt.
+
+
+# Troubleshooting
+Sollten Sie aus irgendeinem Grund in der Tabelle "Laboraufträge" nach dem Login keine Daten sehen, habe ich Ihnen eine Postman Collection bereitgestellt, die Sie verwenden können, um die Daten zu füllen.
+Sie finden die Collection im Abgabeordner. Diese können Sie in Postman importieren und den POST Request auf den Laborauftrag Endpunkt ausführen.
+
+Postman installation: https://www.postman.com/downloads/
+
+
+# Weitere Hinweise
+Sie könnten die App auch auf dem Mobilgerät ausführen, was allerdings eine Rekonfiguration der docker-compose.yml erfordert sowie eine Rekonfiguration von Localhost auf die Host IP also die IP Ihres Rechners.
+Die App ist Mobile First gebaut worden.
