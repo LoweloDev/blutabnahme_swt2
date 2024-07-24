@@ -29,7 +29,14 @@ export class MqttService {
   }
 
   private connectToBroker() {
-    const brokerUrl = "mqtt://localhost:1883";
+    const mqttHost = process.env.MQTT_HOST || "localhost";
+    const mqttPort = process.env.MQTT_PORT || 1883;
+
+    console.log(`Connecting to MQTT broker at ${mqttHost}:${mqttPort}...`);
+
+    const brokerUrl = `mqtt://${mqttHost}:${mqttPort}`;
+    this.client = mqtt.connect(brokerUrl);
+    // const brokerUrl = "mqtt://localhost:1883";
     console.log(`Connecting to MQTT broker at ${brokerUrl}...`);
 
     this.client = mqtt.connect(brokerUrl);
