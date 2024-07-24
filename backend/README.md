@@ -76,13 +76,8 @@ Die Postman Collection finden Sie im Abgabeordner.
 ## QR Codes
 Die QR Codes zum testen der Anwendung finden Sie ebenfalls im Abgabeordner. Die QR Codes sind entsprechend benannt.
 
-
 # Troubleshooting
-Sollten Sie aus irgendeinem Grund in der Tabelle "Laboraufträge" nach dem Login keine Daten sehen, habe ich Ihnen eine Postman Collection bereitgestellt, die Sie verwenden können, um die Daten zu füllen.
-Sie finden die Collection im Abgabeordner. Diese können Sie in Postman importieren und den POST Request auf den Laborauftrag Endpunkt ausführen.
-
-Postman installation: https://www.postman.com/downloads/
-
+Sollten Sie Probleme haben, kontaktieren Sie mich bitte. Per Email kann ich dann auch gerne effizientere Kontaktmethoden anbieten wie Telefonnummer o.ä.
 
 # Weitere Hinweise
 Sie könnten die App auch auf dem Mobilgerät ausführen, was allerdings eine Rekonfiguration der docker-compose.yml erfordert sowie eine Rekonfiguration von Localhost auf die Host IP also die IP Ihres Rechners.
