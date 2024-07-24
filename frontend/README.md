@@ -18,7 +18,7 @@ Installieren Sie NVM:
 2. `source ~/.bashrc`
 3. `nvm --version` um die Version zu überprüfen sodass sie sicher sind, dass NVM installiert wurde.
 
-Installieren sie Node.js und npm:
+Installieren sie Node.js
 1. `nvm install node 20`
 2. `nvm use`
 3. `node --version` um die Version zu überprüfen sodass sie sicher sind, dass Node.js installiert wurde.
