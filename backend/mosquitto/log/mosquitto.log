@@ -1488,3 +1488,39 @@
 1721815953: mosquitto version 2.0.18 running
 1721815962: mosquitto version 2.0.18 terminating
 1721815962: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721817759: mosquitto version 2.0.18 starting
+1721817759: Config loaded from /mosquitto/config/mosquitto.conf.
+1721817759: Opening ipv4 listen socket on port 1883.
+1721817759: Opening ipv6 listen socket on port 1883.
+1721817759: Opening websockets listen socket on port 9001.
+1721817759: mosquitto version 2.0.18 running
+1721817788: New client connected from ::ffff:172.24.0.1:61402 as mqttjs_a100dc83 (p2, c1, k60).
+1721817815: mosquitto version 2.0.18 terminating
+1721817815: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721817815: Client mqttjs_a100dc83 closed its connection.
+1721818280: mosquitto version 2.0.18 starting
+1721818280: Config loaded from /mosquitto/config/mosquitto.conf.
+1721818280: Opening ipv4 listen socket on port 1883.
+1721818280: Opening ipv6 listen socket on port 1883.
+1721818280: Opening websockets listen socket on port 9001.
+1721818280: mosquitto version 2.0.18 running
+1721818281: New client connected from ::ffff:172.24.0.1:61416 as mqttjs_a100dc83 (p2, c1, k60).
+1721818434: mosquitto version 2.0.18 starting
+1721818434: Config loaded from /mosquitto/config/mosquitto.conf.
+1721818434: Opening ipv4 listen socket on port 1883.
+1721818434: Opening ipv6 listen socket on port 1883.
+1721818434: Opening websockets listen socket on port 9001.
+1721818434: mosquitto version 2.0.18 running
+1721818437: New client connected from ::ffff:172.24.0.1:61454 as mqttjs_a100dc83 (p2, c1, k60).
+1721818471: mosquitto version 2.0.18 terminating
+1721818471: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1721818471: Client mqttjs_a100dc83 closed its connection.
+1721818661: mosquitto version 2.0.18 starting
+1721818661: Config loaded from /mosquitto/config/mosquitto.conf.
+1721818661: Opening ipv4 listen socket on port 1883.
+1721818661: Opening ipv6 listen socket on port 1883.
+1721818661: Opening websockets listen socket on port 9001.
+1721818661: mosquitto version 2.0.18 running
+1721818662: New client connected from ::ffff:172.24.0.1:61458 as mqttjs_a100dc83 (p2, c1, k60).
+1721818998: Client mqttjs_a100dc83 closed its connection.
+1721818999: New client connected from ::ffff:172.24.0.1:61488 as mqttjs_5e8d760d (p2, c1, k60).

@@ -62,7 +62,7 @@ export class LaborauftragSelectedComponent {
         proben: [],
       };
       const materialart = laborauftrag?.id.slice(-4);
-      this.probe.push({ id: result[key], material: materialart, timestamp: new Date()});
+      this.probe.push({ laborauftrag_id: laborauftrag.id, id: result[key], material: materialart, timestamp: new Date()});
       this.probeMap.set(laborauftrag.id, this.probe);
       blutabnahme.proben = this.probe;
       this.blutabnahme.set(laborauftrag, blutabnahme);

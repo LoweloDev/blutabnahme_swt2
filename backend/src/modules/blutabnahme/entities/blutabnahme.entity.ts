@@ -24,9 +24,9 @@ export class Blutabnahme {
   @MockValue()
   patient_id?: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, default: "blutabnahme" })
   @MockValue()
-  type?: string;
+  type?: string = "blutabnahme";
 
   @Column({ type: "date", nullable: true })
   @MockValue()
