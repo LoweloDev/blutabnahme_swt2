@@ -68,7 +68,6 @@ export class GenericTableComponent<T extends GenericEntity> implements OnInit, O
   }
 
   async onRowClicked(row: T) {
-    console.log('Row clicked:', row);
     await this.router.navigate([`/detail/${row.type}/${row['id']}`]);
   }
 
