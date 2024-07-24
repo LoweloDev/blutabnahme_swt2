@@ -1,3 +1,7 @@
+# Github Repository auf meinem Github Account (Tobias Barthold (7209370) / LoweloDev)
+https://github.com/LoweloDev/blutabnahme_swt2
+## Alternativ finden sie die App auch auf dem Stick inkl. aller nötigen Dateien.
+
 # Prequisites
 Sie sollten folgende Software installiert haben:
 - NVM (Node Version Manager)
