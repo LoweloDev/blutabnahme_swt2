@@ -70,7 +70,7 @@ export class LaborauftragSelectedComponent {
       this.popupService.showError(
         {
           title: 'Fehler',
-          message: 'Fehler beim Scannen',
+          message: 'Scan failed. Please try again',
         }
       );
     }

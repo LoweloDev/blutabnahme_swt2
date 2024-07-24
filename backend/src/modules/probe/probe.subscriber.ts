@@ -16,7 +16,6 @@ export class ProbeSubscriber implements EntitySubscriberInterface<Probe> {
   }
   async afterInsert(event: InsertEvent<Probe>) {
     const mqtt = new MqttService();
-    console.log(`Inserted user with id ${event.entity.id}`);
     await mqtt.publish(
       "probe",
       JSON.stringify(new MqttEvent("insert", event.entity)),
@@ -26,7 +25,6 @@ export class ProbeSubscriber implements EntitySubscriberInterface<Probe> {
   }
   async afterUpdate(event: UpdateEvent<Probe>) {
     const mqtt = new MqttService();
-    console.log(`Updated user with id ${event.entity.id}`);
     await mqtt.publish(
       "probe",
       JSON.stringify(new MqttEvent("update", event.entity)),
@@ -35,7 +33,6 @@ export class ProbeSubscriber implements EntitySubscriberInterface<Probe> {
   }
   async afterRemove(event: any) {
     const mqtt = new MqttService();
-    console.log(`Removed user with id ${event.entityId}`);
     await mqtt.publish(
       "probe",
       JSON.stringify(new MqttEvent("remove", event.entityId)),

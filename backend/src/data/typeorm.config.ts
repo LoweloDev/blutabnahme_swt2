@@ -12,7 +12,7 @@ export class DbConfig {
   public static LOCAL: TypeOrmModuleOptions = {
     type: "sqlite",
     database: "./src/data/inspiring_newton",
-    dropSchema: true,
+    dropSchema: false,
     migrations: [__dirname + "/../../migrations/sqlite/*.{ts,js}"],
     entities: [__dirname + "/../../**/*.entity.{ts,js}"],
     subscribers: [BlutabnahmeSubscriber, ProbeSubscriber],
