@@ -9,18 +9,18 @@ import {Probe} from "../models/probe";
 export class ProbeService {
   constructor(private http: HttpClient) {}
   getAll() {
-    return this.http.get(`${environment.apiUrl}/api/probe`);
+    return this.http.get<Probe[]>(`${environment.apiUrl}/probe`);
   }
   get(id: string) {
-    return this.http.get(`${environment.apiUrl}/api/probe/${id}`);
+    return this.http.get<Probe>(`${environment.apiUrl}/probe/${id}`);
   }
   create(probe: Probe) {
-    return this.http.post(`${environment.apiUrl}/api/probe`, probe);
+    return this.http.post<Probe>(`${environment.apiUrl}/probe`, probe);
   }
   update(id: string, probe: Probe) {
-    return this.http.put(`${environment.apiUrl}/api/probe/${id}`, probe);
+    return this.http.put<Probe>(`${environment.apiUrl}/probe/${id}`, probe);
   }
   delete(id: string) {
-    return this.http.delete(`${environment.apiUrl}/api/probe/${id}`);
+    return this.http.delete<Probe>(`${environment.apiUrl}/probe/${id}`);
   }
 }

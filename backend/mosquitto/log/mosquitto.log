@@ -1259,3 +1259,21 @@
 1721812721: New client connected from ::ffff:172.24.0.1:60930 as mqttjs_fcf375cc (p2, c1, k60).
 1721812721: Client mqttjs_9589e666 closed its connection.
 1721812722: New client connected from ::ffff:172.24.0.1:60932 as mqttjs_5a118a8e (p2, c1, k60).
+1721812792: Client mqttjs_fcf375cc closed its connection.
+1721812792: New client connected from ::ffff:172.24.0.1:60934 as mqttjs_73a88242 (p2, c1, k60).
+1721812817: Client mqttjs_73a88242 closed its connection.
+1721812817: New client connected from ::ffff:172.24.0.1:60936 as mqttjs_2b626647 (p2, c1, k60).
+1721812907: Client mqttjs_2b626647 closed its connection.
+1721812908: New client connected from ::ffff:172.24.0.1:60938 as mqttjs_8d5778b3 (p2, c1, k60).
+1721812910: New client connected from ::ffff:172.24.0.1:60940 as mqttjs_17db7138 (p2, c1, k60).
+1721812953: Client mqttjs_17db7138 closed its connection.
+1721812954: New client connected from ::ffff:172.24.0.1:60942 as mqttjs_e814059a (p2, c1, k60).
+1721812954: Client mqttjs_8d5778b3 closed its connection.
+1721812954: New client connected from ::ffff:172.24.0.1:60944 as mqttjs_7f785d8b (p2, c1, k60).
+1721812956: New client connected from ::ffff:172.24.0.1:60946 as mqttjs_c0fdb0b1 (p2, c1, k60).
+1721812957: Client mqttjs_411ff3ed closed its connection.
+1721812957: Client mqttjs_5a118a8e closed its connection.
+1721812957: Client mqttjs_7f785d8b closed its connection.
+1721812957: Client mqttjs_e814059a closed its connection.
+1721813043: Client mqttjs_c0fdb0b1 closed its connection.
+1721813044: New client connected from ::ffff:172.24.0.1:60948 as mqttjs_88e6f3f3 (p2, c1, k60).
