@@ -57,6 +57,8 @@ export class ScanComponent implements OnInit, AfterViewInit {
     this.scanner.autofocusEnabled = true;
 
     this.scanner.scanSuccess.subscribe((result: string) => {
+      console.log("Scan result: ", result)
+      console.log("Step data: ", this.stepData)
       this.stepData[this.stepData.stepId] = result;
       this.save();
     });

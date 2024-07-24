@@ -55,7 +55,7 @@
     <mat-step>
       <ng-template matStepLabel>Mitarbeiter scannen</ng-template>
       <div>
-        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'patient_id' }), scanCallback)" [disabled]="0 !== currentStep">
+        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'mitarbeiter_id' }), scanCallback)" [disabled]="0 !== currentStep">
           Bitte Mitarbeiter-Karte scannen
         </button>
       </div>
@@ -63,7 +63,7 @@
     <mat-step>
       <ng-template matStepLabel>Patient scannen</ng-template>
       <div>
-        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'mitarbeiter_id' }), scanCallback)" [disabled]="1 !== currentStep">
+        <button mat-flat-button (click)="popupService.openStepDialog(ScanComponent, getCurrentStateOfDataset({ stepId: 'patient_id' }), scanCallback)" [disabled]="1 !== currentStep">
           Bitte Patienten-Armband scannen
         </button>
       </div>
