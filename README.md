@@ -1,4 +1,4 @@
-# Github Repository auf meinem Github Account (Tobias Barthold (7209370) / LoweloDev)
+# Github Repository auf meinem Github Account (MatNr. 7209370))
 https://github.com/LoweloDev/blutabnahme_swt2
 ## Alternativ finden sie die App auch auf dem Stick inkl. aller nötigen Dateien.
 
